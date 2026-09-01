@@ -141,3 +141,28 @@ desincronizarse.
 **Errores encontrados:** Ninguno.
 **Cómo se corrigió:** N/A
 **Siguiente paso sugerido:** Ninguno específico.
+
+## 2026-09-01 — CI/CD: Fix del pipeline de GitHub Actions (falla real detectada)
+**Estado:** ✅ Completado
+**Qué se hizo:** Al revisar `.github/workflows/ci.yml` con `/cicd`, se
+descubrió que el repositorio ya tiene remoto en GitHub
+(`developerrobertoguardado-lgtm/catalogo-ecommerce`) con 2 commits pusheados
+fuera de esta sesión, y que la última corrida real de CI **falló**. Se
+consultó la API pública de GitHub Actions (runs → jobs → logs) para obtener
+el error exacto en vez de adivinar.
+**Errores encontrados:** El paso "Install PHP dependencies" fallaba porque
+`composer.lock` (generado localmente con PHP 8.5) resolvió Symfony 8.1.x y
+`nesbot/carbon` 3.13.2, que requieren PHP ≥8.4.1, mientras el workflow fijaba
+`php-version: '8.3'` — un mismatch real entre lo que el lockfile exige y lo
+que CI instalaba.
+**Cómo se corrigió:** Se subió `php-version` a `'8.5'` en
+`.github/workflows/ci.yml` (coincide con lo que ya usa Sail/`sail-8.5/app`
+localmente). Se actualizó también `composer.json` (`"php": "^8.2"` →
+`"^8.4"`) para que la restricción declarada refleje la realidad, y se corrió
+`composer update --lock` (solo refresca el content-hash, no re-resuelve
+paquetes — verificado con `git diff` que ningún paquete cambió de versión).
+Se corrieron los 21 tests localmente tras el cambio: siguen en verde.
+**Siguiente paso sugerido:** Falta confirmar que el push de este fix hace
+que la corrida real de GitHub Actions pase (quedó pendiente de que el
+usuario autorice el commit/push, ya que no se pidió explícitamente en este
+turno).
