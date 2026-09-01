@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: testing
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, pdo_pgsql, gd, zip
+          coverage: none
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Copy .env
+        run: cp .env.example .env
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build frontend assets
+        run: npm run build
+
+      - name: Generate application key
+        run: php artisan key:generate
+
+      - name: Configure environment for testing
+        run: |
+          php -r "
+          \$env = file_get_contents('.env');
+          \$env = preg_replace('/^DB_CONNECTION=.*/m', 'DB_CONNECTION=pgsql', \$env);
+          \$env = preg_replace('/^DB_HOST=.*/m', 'DB_HOST=127.0.0.1', \$env);
+          \$env = preg_replace('/^DB_PORT=.*/m', 'DB_PORT=5432', \$env);
+          \$env = preg_replace('/^DB_DATABASE=.*/m', 'DB_DATABASE=testing', \$env);
+          \$env = preg_replace('/^DB_USERNAME=.*/m', 'DB_USERNAME=postgres', \$env);
+          \$env = preg_replace('/^DB_PASSWORD=.*/m', 'DB_PASSWORD=password', \$env);
+          file_put_contents('.env', \$env);
+          "
+
+      - name: Run migrations
+        run: php artisan migrate --force
+
+      - name: Run tests
+        run: php artisan test

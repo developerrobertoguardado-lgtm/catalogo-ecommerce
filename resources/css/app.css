@@ -1,0 +1,55 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.icon-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+.icon-md {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.icon-lg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.avatar-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+.thumbnail-indicator {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.375rem;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 2px solid transparent;
+}
+
+.thumbnail-indicator.active {
+    opacity: 1;
+    border-color: var(--bs-primary);
+}
+
+.product-card-img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.hover-shadow {
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
