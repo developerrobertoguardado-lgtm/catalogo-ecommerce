@@ -1,59 +1,211 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Ecommerce Catálogo + Pedidos por WhatsApp
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Catálogo de productos online con panel administrativo, donde cada producto
+tiene un botón **"Comprar"** que arma un mensaje prellenado y abre WhatsApp
+con el vendedor. No hay carrito multi-producto ni pasarela de pago: el
+cierre real de la venta ocurre por WhatsApp, fuera del sistema. Cada pedido
+enviado queda registrado en base de datos para que el administrador lo vea
+desde el panel.
 
-## About Laravel
+## Índice
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Funcionalidades](#funcionalidades)
+- [Stack tecnológico](#stack-tecnológico)
+- [Requisitos previos](#requisitos-previos)
+- [Instalación y arranque local](#instalación-y-arranque-local)
+- [Variables de entorno](#variables-de-entorno)
+- [Estructura del proyecto](#estructura-del-proyecto)
+- [Tests](#tests)
+- [Usuario administrador de ejemplo](#usuario-administrador-de-ejemplo)
+- [Despliegue](#despliegue)
+- [Documentación y Spec-Driven Development](#documentación-y-spec-driven-development)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Funcionalidades
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Catálogo público
+- Listado de productos en cards (foto principal, nombre, precio, categoría).
+- Hasta 4 fotos por producto, con slider/carousel en el detalle.
+- Categorías con navegación y filtro dedicado por categoría.
+- Filtros combinables: nombre, categoría, rango de precio.
+- Badges automáticos de stock ("Agotado" / "Últimas unidades") derivados del
+  stock real, sin datos inventados.
 
-## Learning Laravel
+### Compra directa por WhatsApp (sin carrito)
+- Cada producto tiene su propio botón "Comprar" con selector de cantidad.
+- Al confirmar, se arma un mensaje (producto, cantidad, precio, total) y se
+  abre `wa.me` hacia el número de WhatsApp configurado en el admin.
+- El pedido se guarda como `Order`/`OrderItem` para que el admin lo vea,
+  aunque el cierre de la venta sea externo.
+- Valida stock disponible antes de generar el pedido (rechaza con 409 si la
+  cantidad pedida supera el stock).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Panel administrativo (`/admin`, con login)
+- CRUD de productos: nombre, categoría, precio, stock, descripción, y hasta
+  4 fotos gestionadas con un dropzone (arrastrar y soltar, miniaturas
+  reordenables por arrastre, foto principal = primera en el orden).
+- CRUD de categorías.
+- Crear/editar productos y categorías se hace en **modales**, no en páginas
+  separadas.
+- Listado y detalle de pedidos generados desde el catálogo (solo lectura).
+- Configuración de tienda: nombre, número de WhatsApp destino, moneda.
+- Cards de estadísticas reales (total de productos, sin stock, stock bajo,
+  total de pedidos, total facturado).
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Stack tecnológico
 
-## Laravel Sponsors
+| Capa | Tecnología |
+|---|---|
+| Backend | Laravel 12 (PHP 8.3+), Blade |
+| Frontend | Bootstrap 5 (CSS + JS bundle) + Alpine.js (solo lógica puntual: stepper de cantidad, dropzone de fotos, fetch del flujo de compra) |
+| Base de datos | PostgreSQL + Eloquent ORM |
+| Entorno local | Docker vía Laravel Sail |
+| Testing | Pest, corrido contra PostgreSQL real (no SQLite) |
+| CI | GitHub Actions |
+| Arquitectura | MVC simple + Repository/Service selectivo (solo donde aporta valor real) |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Decisiones de arquitectura documentadas como ADRs en
+[`spec/02-architecture.md`](spec/02-architecture.md): sin carrito/pasarela
+de pago, Sail para Docker local, Pest sobre PHPUnit puro, y Bootstrap 5 en
+reemplazo de Tailwind (usado en la primera versión del proyecto).
 
-### Premium Partners
+## Requisitos previos
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- Docker Desktop
+- PHP 8.3+ y Composer (opcional si se corre todo dentro de Sail)
+- Node.js 20+ y npm (para compilar los assets de Bootstrap/Alpine)
 
-## Contributing
+## Instalación y arranque local
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### macOS, Linux o Windows con WSL2
 
-## Code of Conduct
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Levantar Laravel Sail (PHP + PostgreSQL en Docker)
+./vendor/bin/sail up -d
 
-## Security Vulnerabilities
+# Migraciones y datos de ejemplo
+./vendor/bin/sail artisan migrate --seed
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Assets del frontend
+npm install
+npm run build   # o "npm run dev" para desarrollo con recarga en caliente
+```
 
-## License
+### Windows sin WSL2 (Git Bash / PowerShell)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+El script `./vendor/bin/sail` no corre en este entorno (solo soporta
+macOS/Linux/WSL2) — usa `docker compose` directamente, que lee el mismo
+`compose.yaml` generado por Sail:
+
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+
+# Construir y levantar los contenedores (equivalente a "sail up -d")
+docker compose up -d --build
+
+# Migraciones y datos de ejemplo, ejecutados dentro del contenedor
+docker compose exec laravel.test php artisan migrate --seed
+
+# Assets del frontend
+npm install
+npm run build
+```
+
+Si el puerto `5432` ya está en uso en el host por otro proyecto, define
+`FORWARD_DB_PORT` en `.env` (ej. `FORWARD_DB_PORT=5434`) antes de levantar
+los contenedores — no afecta la conexión interna de Laravel a `pgsql:5432`.
+
+La app queda disponible en `http://localhost`.
+
+## Variables de entorno
+
+Además de las estándar de Laravel (`APP_*`, `DB_*`, ya preconfiguradas en
+`.env.example` para Sail/PostgreSQL), este proyecto agrega:
+
+| Variable | Descripción |
+|---|---|
+| `WHATSAPP_NUMBER` | Número de WhatsApp por defecto usado como fallback si todavía no existe una fila en `store_settings` (se sobrescribe desde `/admin/configuracion`). |
+
+## Estructura del proyecto
+
+```
+app/
+├── Http/Controllers/Catalogo/   # Catálogo público + flujo de pedido
+├── Http/Controllers/Admin/      # Panel administrativo (CRUD)
+├── Http/Controllers/Auth/       # Login de admin (custom, sin Breeze)
+├── Http/Requests/               # Form Requests de validación
+├── Services/PedidoWhatsAppService.php  # Lógica de armado del pedido/mensaje
+└── Models/                      # Category, Product, ProductImage, Order,
+                                  # OrderItem, StoreSetting, User
+
+resources/views/
+├── catalogo/                    # Vistas públicas
+├── admin/                       # Vistas del panel (con modales de CRUD)
+└── components/                  # <x-producto-card>, <x-slider-fotos>,
+                                  # <x-fotos-dropzone>, <x-icon>, layouts
+
+resources/js/
+├── app.js                       # Bootstrap JS bundle + Alpine
+└── fotos-dropzone.js            # Lógica del dropzone de fotos reordenable
+
+tests/
+├── Feature/Admin/                # CRUD de productos y categorías
+├── Feature/Catalogo/             # Filtros del catálogo
+├── Feature/Pedidos/              # Flujo de compra por WhatsApp
+└── Unit/                         # PedidoWhatsAppService
+
+spec/                             # Especificaciones (Spec-Driven Development)
+.claude/                          # Skills y comandos SDD
+```
+
+## Tests
+
+```bash
+./vendor/bin/sail artisan test                       # macOS/Linux/WSL2
+docker compose exec laravel.test php artisan test    # Windows sin WSL2
+```
+
+Los tests corren contra la base de datos `testing` en el mismo PostgreSQL de
+Sail (no SQLite), según lo definido en
+[`spec/05-testing-strategy.md`](spec/05-testing-strategy.md). Cobertura
+actual: CRUD de productos/categorías (incluyendo el límite de 4 fotos y el
+reordenamiento vía dropzone), filtros del catálogo, generación del mensaje y
+link de WhatsApp, y creación de `Order`/`OrderItem`.
+
+## Usuario administrador de ejemplo
+
+Creado por el `DatabaseSeeder`:
+
+- **Email:** `admin@example.com`
+- **Password:** `password`
+
+## Despliegue
+
+Sin CD configurado todavía (ver el ADR correspondiente en
+[`spec/02-architecture.md`](spec/02-architecture.md)). Cuando se defina un
+destino de despliegue, usar el comando `/cicd` para generar el pipeline.
+
+## Documentación y Spec-Driven Development
+
+Este proyecto usa **Spec-Driven Development (SDD)**: toda decisión y toda
+feature quedan documentadas antes o junto con el código.
+
+- [`spec/`](spec/) — especificaciones del proyecto (visión, requisitos,
+  arquitectura con ADRs, modelo de datos, contratos de rutas, estrategia de
+  testing) y `spec/features/NNN-slug/` con la spec de cada feature
+  incremental.
+- [`spec/progress-log.md`](spec/progress-log.md) — bitácora histórica
+  append-only: qué se hizo, qué errores hubo y cómo se resolvieron, sesión a
+  sesión.
+- [`AGENTS.md`](AGENTS.md) — reglas para cualquier agente de IA (o persona)
+  que trabaje en este repositorio.
+- `.claude/skills/` — skills especializados (`laravel-specialist`,
+  `postgres-specialist`, `testing-specialist`) con convenciones propias de
+  este proyecto.
+- `.claude/commands/` — comandos SDD: `/spec-new`, `/spec-review`, `/fix`,
+  `/test`, `/cicd`.

@@ -123,3 +123,21 @@ archivo único a carpetas `NNN-slug/` con `change.md`/`impact.md`/`task.md`/`val
 **Siguiente paso sugerido:** Seguir usando `/spec-new` y `/fix` normalmente
 — ya generan specs en el nuevo formato de carpeta y agregan entradas acá
 automáticamente.
+
+## 2026-09-01 — Setup: README detallado del proyecto
+**Estado:** ✅ Completado
+**Qué se hizo:** Se pidió el README detallado del proyecto vía `/spec-new`,
+pero al ser una tarea de documentación pura (sin cambios de datos, rutas ni
+tests) no encajaba en el formato de spec de feature (`change`/`impact`/
+`task`/`validation`), así que se hizo directo sin crear una carpeta en
+`/spec/features/`. Se reemplazó el `README.md` raíz (que seguía siendo el
+boilerplate genérico de Laravel, nunca actualizado) por un README completo:
+funcionalidades, stack, instalación (con la variante Windows sin WSL2),
+variables de entorno, estructura del proyecto, tests, credenciales del
+admin de ejemplo, y enlaces a `spec/`/`AGENTS.md`. Se eliminó
+`docs/README.md` (quedaba duplicado y sin ninguna referencia real hacia él
+en el resto del proyecto) para no mantener dos documentos que pudieran
+desincronizarse.
+**Errores encontrados:** Ninguno.
+**Cómo se corrigió:** N/A
+**Siguiente paso sugerido:** Ninguno específico.
