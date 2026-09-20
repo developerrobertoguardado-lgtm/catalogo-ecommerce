@@ -1,0 +1,37 @@
+# Tasks: CRUD completo de pedidos en admin con modal, estados y auditoría
+
+- [x] Migración `add_status_notes_to_orders_table` (status enum + notes)
+- [x] Migración `create_order_status_logs_table` (auditoría de estados)
+- [x] Actualizar modelo `Order`: fillable, casts, relación `statusLogs`, `recalculateTotal()`, `isDelivered()`, `canBeEdited()`
+- [x] Crear modelo `OrderStatusLog` con fillables y relaciones
+- [x] Form Request `UpdateOrderRequest` (validación: status enum, notes, delivery_*, items con quantity >= 1)
+- [x] `OrderController`:
+  - [x] `edit(Order $pedido)` — devuelve el partial del modal (con `items.product.primaryImage`)
+  - [x] `update(UpdateOrderRequest $request, Order $pedido)` — transacción: actualiza order, sincroniza items (create/update/delete), recalcula total, logea cambio de status
+  - [x] `statusLog(Order $pedido)` — historial
+- [x] Vista `admin/pedidos/index.blade.php`:
+  - [x] Columna "Estado" con badge por estado (secondary/warning/info/success)
+  - [x] Botón "Editar" que carga el modal vía AJAX (`GET /admin/pedidos/{id}/edit`)
+  - [x] Script inline `pedidoModal()` (Alpine) + `initPedidoModal()` con `Alpine.initTree`
+- [x] Partial `admin/pedidos/_modal.blade.php`:
+  - [x] Cliente (nombre, teléfono), entrega (zona, ciudad, dirección, referencias), nota interna
+  - [x] Selector estado (desbloqueado siempre para permitir reabrir ENTREGADO)
+  - [x] Tabla items: miniatura, nombre, precio, cantidad editable, subtotal, botón eliminar
+  - [x] Total calculado en vivo
+  - [x] Modal anidado "Agregar item" con búsqueda debounced de productos (`GET /admin/productos/search`)
+- [x] Endpoint `GET /admin/productos/search` (JSON, imágenes `primary_image_url`)
+- [x] Estilos CSS `order-item-thumb` (40x40, object-fit, temas claro/oscuro)
+- [x] Tests `tests/Feature/Admin/PedidosCrudTest.php` (11 tests):
+  - [x] Edita pedido (dirección, nota, estado)
+  - [x] Cambia cantidad → recalcula subtotal y total
+  - [x] Agrega item nuevo
+  - [x] Elimina item
+  - [x] Log de auditoría al cambiar estado
+  - [x] Sin log cuando el estado no cambia
+  - [x] Validación cantidad < 1
+  - [x] Validación estado inválido
+  - [x] Modal renderiza con todos los campos
+  - [x] Bloqueo ENTREGADO (inputs disabled, sin botón agregar)
+  - [x] Listado con columna estado y botón editar
+- [x] `npm run build` + suite completa (56 tests, 226 assertions)
+- [x] Validación con MCP: modal AJAX, miniaturas, recálculo en vivo, agregar item por búsqueda, guardado con auditoría, móvil 390px sin overflow

@@ -1,0 +1,47 @@
+- generic [active] [ref=f2e1]:
+  - navigation [ref=f2e2]:
+    - generic [ref=f2e3]:
+      - generic [ref=f2e4]:
+        - generic [ref=f2e5]: L
+        - text: Laravel
+      - button "D Demo" [ref=f2e7] [cursor=pointer]:
+        - generic [ref=f2e8]: D
+        - generic [ref=f2e9]: Demo
+  - generic [ref=f2e11]:
+    - list [ref=f2e13]:
+      - listitem [ref=f2e14]:
+        - link "Productos" [ref=f2e15] [cursor=pointer]:
+          - /url: http://localhost/admin/productos
+      - listitem [ref=f2e18]:
+        - link "Categorías" [ref=f2e19] [cursor=pointer]:
+          - /url: http://localhost/admin/categorias
+      - listitem [ref=f2e22]:
+        - link "Pedidos" [ref=f2e23] [cursor=pointer]:
+          - /url: http://localhost/admin/pedidos
+      - listitem [ref=f2e26]:
+        - link "Configuración" [ref=f2e27] [cursor=pointer]:
+          - /url: http://localhost/admin/configuracion
+    - main [ref=f2e30]:
+      - heading "Categorías" [level=1] [ref=f2e31]
+      - button "+ Nueva categoría" [ref=f2e33] [cursor=pointer]
+      - generic [ref=f2e36]:
+        - generic [ref=f2e37]:
+          - generic [ref=f2e38]: Buscar categorías
+          - searchbox "Buscar categorías" [ref=f2e39]: QUIA
+        - generic [ref=f2e40]:
+          - button "Buscar" [ref=f2e41] [cursor=pointer]
+          - link "Limpiar" [ref=f2e42] [cursor=pointer]:
+            - /url: http://localhost/admin/categorias
+      - table [ref=f2e45]:
+        - rowgroup [ref=f2e46]:
+          - row [ref=f2e47]:
+            - columnheader "Nombre" [ref=f2e48]
+            - columnheader "Productos" [ref=f2e49]
+            - columnheader [ref=f2e50]
+        - rowgroup [ref=f2e51]:
+          - row [ref=f2e52]:
+            - cell "Quia Sint" [ref=f2e53]
+            - cell "4" [ref=f2e54]
+            - cell [ref=f2e56]:
+              - button "Editar" [ref=f2e57] [cursor=pointer]
+              - button "Eliminar" [ref=f2e59] [cursor=pointer]

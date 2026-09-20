@@ -33,7 +33,8 @@ return [
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),
-            'serve' => true,
+            // Protected files must not intercept the public /storage URL.
+            'serve' => false,
             'throw' => false,
             'report' => false,
         ],
@@ -43,7 +44,8 @@ return [
             'root' => storage_path('app/public'),
             'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
             'visibility' => 'public',
-            'throw' => false,
+            'serve' => true,
+            'throw' => true,
             'report' => false,
         ],
 

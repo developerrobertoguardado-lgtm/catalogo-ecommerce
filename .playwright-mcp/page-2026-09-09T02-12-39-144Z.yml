@@ -1,0 +1,90 @@
+- generic [active] [ref=f16e1]:
+  - navigation [ref=f16e2]:
+    - generic [ref=f16e3]:
+      - generic [ref=f16e4]:
+        - generic [ref=f16e5]: L
+        - img "Rapidocompras" [ref=f16e6]
+      - generic [ref=f16e7]:
+        - button "Cambiar a modo claro" [ref=f16e8] [cursor=pointer]:
+          - generic [ref=f16e11]: Cambiar tema
+        - button "A Admin" [ref=f16e13] [cursor=pointer]:
+          - generic [ref=f16e14]: A
+          - generic [ref=f16e15]: Admin
+  - generic [ref=f16e17]:
+    - list [ref=f16e19]:
+      - listitem [ref=f16e20]:
+        - link "Productos" [ref=f16e21] [cursor=pointer]:
+          - /url: http://localhost/admin/productos
+      - listitem [ref=f16e24]:
+        - link "Categorías" [ref=f16e25] [cursor=pointer]:
+          - /url: http://localhost/admin/categorias
+      - listitem [ref=f16e28]:
+        - link "Pedidos" [ref=f16e29] [cursor=pointer]:
+          - /url: http://localhost/admin/pedidos
+      - listitem [ref=f16e32]:
+        - link "Configuración" [ref=f16e33] [cursor=pointer]:
+          - /url: http://localhost/admin/configuracion
+    - main [ref=f16e36]:
+      - heading "Pedidos" [level=1] [ref=f16e37]
+      - generic [ref=f16e38]:
+        - generic [ref=f16e41]:
+          - paragraph [ref=f16e42]: Total de pedidos
+          - paragraph [ref=f16e43]: "4"
+        - generic [ref=f16e46]:
+          - paragraph [ref=f16e47]: Total enviado por WhatsApp
+          - paragraph [ref=f16e48]: "874.00"
+      - table [ref=f16e51]:
+        - rowgroup [ref=f16e52]:
+          - row [ref=f16e53]:
+            - columnheader "#" [ref=f16e54]
+            - columnheader "Fecha" [ref=f16e55]
+            - columnheader "WhatsApp" [ref=f16e56]
+            - columnheader "Estado" [ref=f16e57]
+            - columnheader "Items" [ref=f16e58]
+            - columnheader "Total" [ref=f16e59]
+            - columnheader [ref=f16e60]
+        - rowgroup [ref=f16e61]:
+          - row [ref=f16e62]:
+            - cell "#5" [ref=f16e63]
+            - cell "04/09/2026 04:22" [ref=f16e64]
+            - cell "51944523222" [ref=f16e65]
+            - cell "PENDIENTE" [ref=f16e66]
+            - cell "1" [ref=f16e68]
+            - cell "20.00" [ref=f16e70]
+            - cell [ref=f16e71]:
+              - link "Ver" [ref=f16e72] [cursor=pointer]:
+                - /url: http://localhost/admin/pedidos/5
+              - button "Editar" [ref=f16e73] [cursor=pointer]
+          - row [ref=f16e74]:
+            - cell "#4" [ref=f16e75]
+            - cell "03/09/2026 20:54" [ref=f16e76]
+            - cell "51999999999" [ref=f16e77]
+            - cell "PENDIENTE" [ref=f16e78]
+            - cell "1" [ref=f16e80]
+            - cell "130.70" [ref=f16e82]
+            - cell [ref=f16e83]:
+              - link "Ver" [ref=f16e84] [cursor=pointer]:
+                - /url: http://localhost/admin/pedidos/4
+              - button "Editar" [ref=f16e85] [cursor=pointer]
+          - row [ref=f16e86]:
+            - cell "#2" [ref=f16e87]
+            - cell "03/09/2026 19:43" [ref=f16e88]
+            - cell "51999999999" [ref=f16e89]
+            - cell "PENDIENTE" [ref=f16e90]
+            - cell "1" [ref=f16e92]
+            - cell "10.00" [ref=f16e94]
+            - cell [ref=f16e95]:
+              - link "Ver" [ref=f16e96] [cursor=pointer]:
+                - /url: http://localhost/admin/pedidos/2
+              - button "Editar" [ref=f16e97] [cursor=pointer]
+          - row [ref=f16e98]:
+            - cell "#1" [ref=f16e99]
+            - cell "01/09/2026 05:07" [ref=f16e100]
+            - cell "51999999999" [ref=f16e101]
+            - cell "PENDIENTE" [ref=f16e102]
+            - cell "1" [ref=f16e104]
+            - cell "713.30" [ref=f16e106]
+            - cell [ref=f16e107]:
+              - link "Ver" [ref=f16e108] [cursor=pointer]:
+                - /url: http://localhost/admin/pedidos/1
+              - button "Editar" [ref=f16e109] [cursor=pointer]

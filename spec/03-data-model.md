@@ -8,6 +8,7 @@
 | id | bigint (PK) | |
 | name | string | |
 | slug | string, único | usado en URLs de filtro |
+| image_path | string, nullable | ruta de imagen opcional de la categoría |
 | created_at / updated_at | timestamp | |
 
 ### Product
@@ -63,6 +64,7 @@ marcada `is_primary = true`.
 | store_name | string | |
 | whatsapp_number | string | número destino por defecto |
 | currency | string | ej. `USD`, `PEN` |
+| logo_path | string, nullable | ruta del logo público de la tienda |
 | created_at / updated_at | timestamp | |
 
 ### users (autenticación admin — tabla estándar de Laravel)

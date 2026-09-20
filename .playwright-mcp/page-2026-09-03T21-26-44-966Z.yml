@@ -1,0 +1,28 @@
+- generic [active] [ref=f7e1]:
+  - navigation [ref=f7e2]:
+    - generic [ref=f7e3]:
+      - button "Abrir menú" [ref=f7e4] [cursor=pointer]
+      - generic [ref=f7e7]:
+        - generic [ref=f7e8]: L
+        - text: Tienda de roberto
+      - generic [ref=f7e9]:
+        - button "Cambiar a modo claro" [ref=f7e10] [cursor=pointer]:
+          - generic [ref=f7e13]: Cambiar tema
+        - button "D" [ref=f7e15] [cursor=pointer]
+  - main [ref=f7e19]:
+    - heading "Configuración" [level=1] [ref=f7e20]
+    - generic [ref=f7e23]:
+      - generic [ref=f7e24]:
+        - generic [ref=f7e25]: Nombre de la tienda
+        - textbox "Nombre de la tienda" [ref=f7e26]: Tienda de roberto
+      - generic [ref=f7e27]:
+        - generic [ref=f7e28]: Logo de la tienda
+        - button "Logo de la tienda" [ref=f7e29] [cursor=pointer]
+        - generic [ref=f7e30]: PNG, JPG, JPEG o WEBP. Máximo 2 MB.
+      - generic [ref=f7e31]:
+        - generic [ref=f7e32]: Número de WhatsApp (solo dígitos, con código de país)
+        - textbox "Número de WhatsApp (solo dígitos, con código de país)" [ref=f7e33]: "51999999999"
+      - generic [ref=f7e34]:
+        - generic [ref=f7e35]: Moneda
+        - textbox "Moneda" [ref=f7e36]: PEN
+      - button "Guardar" [ref=f7e37] [cursor=pointer]

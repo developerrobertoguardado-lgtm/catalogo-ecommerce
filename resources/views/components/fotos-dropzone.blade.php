@@ -8,7 +8,7 @@
 @endphp
 
 <div
-    x-data="fotosDropzone(@json($existentes), {{ $max }})"
+    x-data="fotosDropzone(@js($existentes), {{ $max }})"
     x-init="init()"
 >
     <div
@@ -43,15 +43,18 @@
                 <span class="badge bg-dark position-absolute top-0 start-0 m-1" x-text="index + 1"></span>
                 <button
                     type="button"
-                    x-show="item.type === 'new'"
                     class="btn btn-sm btn-danger rounded-circle position-absolute top-0 end-0 m-1 p-0 d-flex align-items-center justify-content-center"
                     style="width: 1.25rem; height: 1.25rem; line-height: 1;"
-                    title="Quitar (aún no guardada)"
-                    @click="quitarNueva(index)"
+                    :title="item.type === 'new' ? 'Quitar (aún no guardada)' : 'Eliminar de la tienda'"
+                    @click="item.type === 'new' ? quitarNueva(index) : quitarExistente(index)"
                 >&times;</button>
             </div>
         </template>
     </div>
+
+    <template x-for="id in eliminados" :key="'del-' + id">
+        <input type="hidden" name="fotos_eliminar[]" :value="id">
+    </template>
 
     <input type="hidden" name="orden_fotos" :value="JSON.stringify(ordenTokens())">
 </div>

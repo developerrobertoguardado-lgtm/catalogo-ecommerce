@@ -1,0 +1,30 @@
+- generic [active] [ref=f13e1]:
+  - navigation [ref=f13e2]:
+    - generic [ref=f13e3]:
+      - button "Abrir menú" [ref=f13e4] [cursor=pointer]
+      - generic [ref=f13e7]:
+        - generic [ref=f13e8]: L
+        - img "Rapidocompras" [ref=f13e9]
+      - generic [ref=f13e10]:
+        - button "Cambiar a modo claro" [ref=f13e11] [cursor=pointer]:
+          - generic [ref=f13e14]: Cambiar tema
+        - button "D" [ref=f13e16] [cursor=pointer]
+  - main [ref=f13e20]:
+    - heading "Configuración" [level=1] [ref=f13e21]
+    - generic [ref=f13e24]:
+      - generic [ref=f13e25]:
+        - generic [ref=f13e26]: Nombre de la tienda
+        - textbox "Nombre de la tienda" [ref=f13e27]: Rapidocompras
+      - generic [ref=f13e28]:
+        - generic [ref=f13e29]: Logo de la tienda
+        - generic [ref=f13e45] [cursor=pointer]:
+          - img "Vista previa del logo" [ref=f13e46]
+          - button "Eliminar logo" [ref=f13e47]: ×
+        - generic [ref=f13e34]: PNG, JPG, JPEG o WEBP. Máximo 2 MB.
+      - generic [ref=f13e35]:
+        - generic [ref=f13e36]: Número de WhatsApp (solo dígitos, con código de país)
+        - textbox "Número de WhatsApp (solo dígitos, con código de país)" [ref=f13e37]: "51951139928"
+      - generic [ref=f13e38]:
+        - generic [ref=f13e39]: Moneda
+        - textbox "Moneda" [ref=f13e40]: PEN
+      - button "Guardar" [ref=f13e41] [cursor=pointer]

@@ -1,0 +1,230 @@
+- generic [ref=f3e1]:
+  - navigation [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - generic [ref=f3e4]:
+        - generic [ref=f3e5]: L
+        - text: Laravel
+      - button "D Demo" [ref=f3e7] [cursor=pointer]:
+        - generic [ref=f3e8]: D
+        - generic [ref=f3e9]: Demo
+  - generic [ref=f3e11]:
+    - list [ref=f3e13]:
+      - listitem [ref=f3e14]:
+        - link "Productos" [ref=f3e15] [cursor=pointer]:
+          - /url: http://localhost/admin/productos
+      - listitem [ref=f3e18]:
+        - link "Categorías" [ref=f3e19] [cursor=pointer]:
+          - /url: http://localhost/admin/categorias
+      - listitem [ref=f3e22]:
+        - link "Pedidos" [ref=f3e23] [cursor=pointer]:
+          - /url: http://localhost/admin/pedidos
+      - listitem [ref=f3e26]:
+        - link "Configuración" [ref=f3e27] [cursor=pointer]:
+          - /url: http://localhost/admin/configuracion
+    - main [ref=f3e30]:
+      - heading "Productos" [level=1] [ref=f3e31]
+      - generic [ref=f3e32]:
+        - generic [ref=f3e35]:
+          - paragraph [ref=f3e36]: Total de productos
+          - paragraph [ref=f3e37]: "15"
+        - generic [ref=f3e40]:
+          - paragraph [ref=f3e41]: Sin stock
+          - paragraph [ref=f3e42]: "0"
+        - generic [ref=f3e45]:
+          - paragraph [ref=f3e46]: Stock bajo (< 5)
+          - paragraph [ref=f3e47]: "4"
+      - button "+ Nuevo producto" [ref=f3e49] [cursor=pointer]
+      - table [ref=f3e52]:
+        - rowgroup [ref=f3e53]:
+          - row [ref=f3e54]:
+            - columnheader "Foto" [ref=f3e55]
+            - columnheader "Nombre" [ref=f3e56]
+            - columnheader "Categoría" [ref=f3e57]
+            - columnheader "Precio" [ref=f3e58]
+            - columnheader "Stock" [ref=f3e59]
+            - columnheader [ref=f3e60]
+        - rowgroup [ref=f3e61]:
+          - row [ref=f3e62]:
+            - cell [ref=f3e63]:
+              - img "MCP Imagen Fix" [ref=f3e64]
+            - cell "MCP Imagen Fix" [ref=f3e65]
+            - cell "Quia Sint" [ref=f3e66]
+            - cell "12.50" [ref=f3e67]
+            - cell "3 unidades" [ref=f3e68]
+            - cell [ref=f3e70]:
+              - button "Editar" [ref=f3e71] [cursor=pointer]
+              - button "Eliminar" [ref=f3e73] [cursor=pointer]
+          - row [ref=f3e74]:
+            - cell [ref=f3e75]:
+              - img "FotoRepro" [ref=f3e76]
+            - cell "FotoRepro" [ref=f3e77]
+            - cell "Dolorem Voluptatem" [ref=f3e78]
+            - cell "10.00" [ref=f3e79]
+            - cell "5 unidades" [ref=f3e80]
+            - cell [ref=f3e82]:
+              - button "Editar" [ref=f3e83] [cursor=pointer]
+              - button "Eliminar" [ref=f3e85] [cursor=pointer]
+          - row [ref=f3e86]:
+            - cell [ref=f3e87]:
+              - img "Producto de Prueba Modal" [ref=f3e88]
+            - cell "Producto de Prueba Modal" [ref=f3e89]
+            - cell "Quia Sint" [ref=f3e90]
+            - cell "19.99" [ref=f3e91]
+            - cell "5 unidades" [ref=f3e92]
+            - cell [ref=f3e94]:
+              - button "Editar" [ref=f3e95] [cursor=pointer]
+              - button "Eliminar" [ref=f3e97] [cursor=pointer]
+          - row [ref=f3e98]:
+            - cell [ref=f3e99]:
+              - img "Voluptas Sapiente Beatae" [ref=f3e100]
+            - cell "Voluptas Sapiente Beatae" [ref=f3e101]
+            - cell "Enim Hic" [ref=f3e102]
+            - cell "26.53" [ref=f3e103]
+            - cell "3 unidades" [ref=f3e104]
+            - cell [ref=f3e106]:
+              - button "Editar" [ref=f3e107] [cursor=pointer]
+              - button "Eliminar" [ref=f3e109] [cursor=pointer]
+          - row [ref=f3e110]:
+            - cell [ref=f3e111]:
+              - img "Dolorem Et Aut" [ref=f3e112]
+            - cell "Dolorem Et Aut" [ref=f3e113]
+            - cell "Enim Hic" [ref=f3e114]
+            - cell "50.12" [ref=f3e115]
+            - cell "48 unidades" [ref=f3e116]
+            - cell [ref=f3e118]:
+              - button "Editar" [ref=f3e119] [cursor=pointer]
+              - button "Eliminar" [ref=f3e121] [cursor=pointer]
+          - row [ref=f3e122]:
+            - cell [ref=f3e123]:
+              - img "Odit Facilis Qui" [ref=f3e124]
+            - cell "Odit Facilis Qui" [ref=f3e125]
+            - cell "Enim Hic" [ref=f3e126]
+            - cell "434.02" [ref=f3e127]
+            - cell "15 unidades" [ref=f3e128]
+            - cell [ref=f3e130]:
+              - button "Editar" [ref=f3e131] [cursor=pointer]
+              - button "Eliminar" [ref=f3e133] [cursor=pointer]
+          - row [ref=f3e134]:
+            - cell [ref=f3e135]:
+              - img "Ratione Nulla Et" [ref=f3e136]
+            - cell "Ratione Nulla Et" [ref=f3e137]
+            - cell "Dolorem Voluptatem" [ref=f3e138]
+            - cell "114.45" [ref=f3e139]
+            - cell "27 unidades" [ref=f3e140]
+            - cell [ref=f3e142]:
+              - button "Editar" [ref=f3e143] [cursor=pointer]
+              - button "Eliminar" [ref=f3e145] [cursor=pointer]
+          - row [ref=f3e146]:
+            - cell [ref=f3e147]:
+              - img "Labore Ducimus Ea" [ref=f3e148]
+            - cell "Labore Ducimus Ea" [ref=f3e149]
+            - cell "Quia Sint" [ref=f3e150]
+            - cell "356.65" [ref=f3e151]
+            - cell "13 unidades" [ref=f3e152]
+            - cell [ref=f3e154]:
+              - button "Editar" [ref=f3e155] [cursor=pointer]
+              - button "Eliminar" [ref=f3e157] [cursor=pointer]
+          - row [ref=f3e158]:
+            - cell [ref=f3e159]:
+              - img "Ipsum Quia Eum" [ref=f3e160]
+            - cell "Ipsum Quia Eum" [ref=f3e161]
+            - cell "Dolorem Voluptatem" [ref=f3e162]
+            - cell "451.77" [ref=f3e163]
+            - cell "39 unidades" [ref=f3e164]
+            - cell [ref=f3e166]:
+              - button "Editar" [ref=f3e167] [cursor=pointer]
+              - button "Eliminar" [ref=f3e169] [cursor=pointer]
+          - row [ref=f3e170]:
+            - cell [ref=f3e171]:
+              - img "In Delectus Aut" [ref=f3e172]
+            - cell "In Delectus Aut" [ref=f3e173]
+            - cell "Maxime Placeat" [ref=f3e174]
+            - cell "428.50" [ref=f3e175]
+            - cell "10 unidades" [ref=f3e176]
+            - cell [ref=f3e178]:
+              - button "Editar" [ref=f3e179] [cursor=pointer]
+              - button "Eliminar" [ref=f3e181] [cursor=pointer]
+          - row [ref=f3e182]:
+            - cell [ref=f3e183]:
+              - img "Quas Rerum Voluptates" [ref=f3e184]
+            - cell "Quas Rerum Voluptates" [ref=f3e185]
+            - cell "Maxime Placeat" [ref=f3e186]
+            - cell "347.63" [ref=f3e187]
+            - cell "4 unidades" [ref=f3e188]
+            - cell [ref=f3e190]:
+              - button "Editar" [ref=f3e191] [cursor=pointer]
+              - button "Eliminar" [ref=f3e193] [cursor=pointer]
+          - row [ref=f3e194]:
+            - cell [ref=f3e195]:
+              - img "Sapiente Architecto Repudiandae" [ref=f3e196]
+            - cell "Sapiente Architecto Repudiandae" [ref=f3e197]
+            - cell "Maxime Placeat" [ref=f3e198]
+            - cell "317.89" [ref=f3e199]
+            - cell "19 unidades" [ref=f3e200]
+            - cell [ref=f3e202]:
+              - button "Editar" [ref=f3e203] [cursor=pointer]
+              - button "Eliminar" [ref=f3e205] [cursor=pointer]
+          - row [ref=f3e206]:
+            - cell [ref=f3e207]:
+              - img "Aliquam Accusamus Velit" [ref=f3e208]
+            - cell "Aliquam Accusamus Velit" [ref=f3e209]
+            - cell "Dolorem Voluptatem" [ref=f3e210]
+            - cell "255.39" [ref=f3e211]
+            - cell "16 unidades" [ref=f3e212]
+            - cell [ref=f3e214]:
+              - button "Editar" [ref=f3e215] [cursor=pointer]
+              - button "Eliminar" [ref=f3e217] [cursor=pointer]
+          - row [ref=f3e218]:
+            - cell [ref=f3e219]:
+              - img "Rem Rerum Aut" [ref=f3e220]
+            - cell "Rem Rerum Aut" [ref=f3e221]
+            - cell "Quia Sint" [ref=f3e222]
+            - cell "364.26" [ref=f3e223]
+            - cell "3 unidades" [ref=f3e224]
+            - cell [ref=f3e226]:
+              - button "Editar" [ref=f3e227] [cursor=pointer]
+              - button "Eliminar" [ref=f3e229] [cursor=pointer]
+          - row [ref=f3e230]:
+            - cell [ref=f3e231]:
+              - img "Rem Adipisci Reiciendis" [ref=f3e232]
+            - cell "Rem Adipisci Reiciendis" [ref=f3e233]
+            - cell "Quia Sint" [ref=f3e234]
+            - cell "130.70" [ref=f3e235]
+            - cell "20 unidades" [ref=f3e236]
+            - cell [ref=f3e238]:
+              - button "Editar" [ref=f3e239] [cursor=pointer]
+              - button "Eliminar" [ref=f3e241] [cursor=pointer]
+      - dialog [active] [ref=f3e242]:
+        - generic [ref=f3e244]:
+          - generic [ref=f3e245]:
+            - heading "Nuevo producto" [level=5] [ref=f3e246]
+            - button [ref=f3e247] [cursor=pointer]
+          - generic [ref=f3e249]:
+            - generic [ref=f3e250]:
+              - generic [ref=f3e251]: Nombre
+              - textbox "Nombre" [ref=f3e252]
+            - generic [ref=f3e253]:
+              - generic [ref=f3e254]: Categoría
+              - combobox "Categoría" [ref=f3e255]:
+                - option "Selecciona una categoría" [selected]
+                - option "Dolorem Voluptatem"
+                - option "Enim Hic"
+                - option "Maxime Placeat"
+                - option "Quia Sint"
+            - generic [ref=f3e256]:
+              - generic [ref=f3e257]: Precio
+              - spinbutton "Precio" [ref=f3e258]
+            - generic [ref=f3e259]:
+              - generic [ref=f3e260]: Stock
+              - spinbutton "Stock" [ref=f3e261]
+            - generic [ref=f3e262]:
+              - generic [ref=f3e263]: Descripción
+              - textbox "Descripción" [ref=f3e264]
+            - generic [ref=f3e265]:
+              - generic [ref=f3e266]: Fotos (máximo 4, arrastra para reordenar)
+              - generic [ref=f3e268] [cursor=pointer]:
+                - paragraph [ref=f3e269]: Arrastra tus fotos aquí o haz clic para seleccionar
+                - paragraph [ref=f3e270]: 0 / 4 fotos
+          - generic [ref=f3e271]:
+            - button "Cancelar" [ref=f3e272] [cursor=pointer]
+            - button "Guardar" [ref=f3e273] [cursor=pointer]

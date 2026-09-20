@@ -1,0 +1,154 @@
+- generic [ref=f6e1]:
+  - navigation [ref=f6e2]:
+    - generic [ref=f6e3]:
+      - generic [ref=f6e4]:
+        - generic [ref=f6e5]: L
+        - img "Rapidocompras" [ref=f6e6]
+      - generic [ref=f6e7]:
+        - button "Cambiar a modo claro" [ref=f6e8] [cursor=pointer]:
+          - generic [ref=f6e11]: Cambiar tema
+        - button "A Admin" [ref=f6e13] [cursor=pointer]:
+          - generic [ref=f6e14]: A
+          - generic [ref=f6e15]: Admin
+  - generic [ref=f6e17]:
+    - list [ref=f6e19]:
+      - listitem [ref=f6e20]:
+        - link "Productos" [ref=f6e21] [cursor=pointer]:
+          - /url: http://localhost/admin/productos
+      - listitem [ref=f6e24]:
+        - link "Categorías" [ref=f6e25] [cursor=pointer]:
+          - /url: http://localhost/admin/categorias
+      - listitem [ref=f6e28]:
+        - link "Pedidos" [ref=f6e29] [cursor=pointer]:
+          - /url: http://localhost/admin/pedidos
+      - listitem [ref=f6e32]:
+        - link "Configuración" [ref=f6e33] [cursor=pointer]:
+          - /url: http://localhost/admin/configuracion
+    - main [ref=f6e36]:
+      - heading "Pedidos" [level=1] [ref=f6e37]
+      - generic [ref=f6e38]:
+        - generic [ref=f6e41]:
+          - paragraph [ref=f6e42]: Total de pedidos
+          - paragraph [ref=f6e43]: "4"
+        - generic [ref=f6e46]:
+          - paragraph [ref=f6e47]: Total enviado por WhatsApp
+          - paragraph [ref=f6e48]: "874.00"
+      - table [ref=f6e51]:
+        - rowgroup [ref=f6e52]:
+          - row [ref=f6e53]:
+            - columnheader "#" [ref=f6e54]
+            - columnheader "Fecha" [ref=f6e55]
+            - columnheader "WhatsApp" [ref=f6e56]
+            - columnheader "Estado" [ref=f6e57]
+            - columnheader "Items" [ref=f6e58]
+            - columnheader "Total" [ref=f6e59]
+            - columnheader [ref=f6e60]
+        - rowgroup [ref=f6e61]:
+          - row [ref=f6e62]:
+            - cell "#5" [ref=f6e63]
+            - cell "04/09/2026 04:22" [ref=f6e64]
+            - cell "51944523222" [ref=f6e65]
+            - cell "PENDIENTE" [ref=f6e66]
+            - cell "1" [ref=f6e68]
+            - cell "20.00" [ref=f6e70]
+            - cell [ref=f6e71]:
+              - link "Ver" [ref=f6e72] [cursor=pointer]:
+                - /url: http://localhost/admin/pedidos/5
+              - button "Editar" [ref=f6e73] [cursor=pointer]
+          - row [ref=f6e74]:
+            - cell "#4" [ref=f6e75]
+            - cell "03/09/2026 20:54" [ref=f6e76]
+            - cell "51999999999" [ref=f6e77]
+            - cell "PENDIENTE" [ref=f6e78]
+            - cell "1" [ref=f6e80]
+            - cell "130.70" [ref=f6e82]
+            - cell [ref=f6e83]:
+              - link "Ver" [ref=f6e84] [cursor=pointer]:
+                - /url: http://localhost/admin/pedidos/4
+              - button "Editar" [ref=f6e85] [cursor=pointer]
+          - row [ref=f6e86]:
+            - cell "#2" [ref=f6e87]
+            - cell "03/09/2026 19:43" [ref=f6e88]
+            - cell "51999999999" [ref=f6e89]
+            - cell "PENDIENTE" [ref=f6e90]
+            - cell "1" [ref=f6e92]
+            - cell "10.00" [ref=f6e94]
+            - cell [ref=f6e95]:
+              - link "Ver" [ref=f6e96] [cursor=pointer]:
+                - /url: http://localhost/admin/pedidos/2
+              - button "Editar" [ref=f6e97] [cursor=pointer]
+          - row [ref=f6e98]:
+            - cell "#1" [ref=f6e99]
+            - cell "01/09/2026 05:07" [ref=f6e100]
+            - cell "51999999999" [ref=f6e101]
+            - cell "PENDIENTE" [ref=f6e102]
+            - cell "1" [ref=f6e104]
+            - cell "713.30" [ref=f6e106]
+            - cell [ref=f6e107]:
+              - link "Ver" [ref=f6e108] [cursor=pointer]:
+                - /url: http://localhost/admin/pedidos/1
+              - button "Editar" [ref=f6e109] [cursor=pointer]
+      - dialog [active] [ref=f6e110]:
+        - generic [ref=f6e112]:
+          - generic [ref=f6e113]:
+            - 'heading "Pedido #5" [level=5] [ref=f6e114]'
+            - button "Cerrar" [ref=f6e115] [cursor=pointer]
+          - generic [ref=f6e116]:
+            - generic [ref=f6e117]:
+              - generic [ref=f6e118]:
+                - generic [ref=f6e119]: Cliente
+                - generic [ref=f6e120]:
+                  - generic [ref=f6e121]:
+                    - generic [ref=f6e122]: Nombre
+                    - textbox [ref=f6e123]: Roberto Guardado
+                  - generic [ref=f6e124]:
+                    - generic [ref=f6e125]: Teléfono
+                    - textbox [ref=f6e126]: "951139928"
+              - generic [ref=f6e127]:
+                - generic [ref=f6e128]: Estado
+                - combobox [ref=f6e129]:
+                  - option "PENDIENTE" [selected]
+                  - option "EN_PROCESO"
+                  - option "ENVIADO"
+                  - option "ENTREGADO"
+            - generic [ref=f6e130]:
+              - generic [ref=f6e131]:
+                - generic [ref=f6e132]: Zona
+                - combobox [ref=f6e133]:
+                  - option "Seleccionar"
+                  - option "Lima" [selected]
+                  - option "Provincias"
+              - generic [ref=f6e134]:
+                - generic [ref=f6e135]: Ciudad
+                - textbox [ref=f6e136]: Piura
+              - generic [ref=f6e137]:
+                - generic [ref=f6e138]: Dirección
+                - textbox [ref=f6e139]: Jorge Basadre
+            - generic [ref=f6e140]:
+              - generic [ref=f6e141]: Referencias / Notas de entrega
+              - textbox [ref=f6e142]: esto es una demostracion
+            - generic [ref=f6e143]:
+              - generic [ref=f6e144]: Nota interna (admin)
+              - textbox [ref=f6e145]
+            - separator [ref=f6e146]
+            - generic [ref=f6e147]:
+              - generic [ref=f6e148]:
+                - text: Items del pedido
+                - generic [ref=f6e149]: "(Total: )"
+              - table [ref=f6e151]:
+                - rowgroup [ref=f6e152]:
+                  - row [ref=f6e153]:
+                    - columnheader "Img" [ref=f6e154]
+                    - columnheader "Producto" [ref=f6e155]
+                    - columnheader "Precio unit." [ref=f6e156]
+                    - columnheader "Cantidad" [ref=f6e157]
+                    - columnheader "Subtotal" [ref=f6e158]
+                    - columnheader [ref=f6e159]
+                - rowgroup
+              - button "Agregar item" [ref=f6e161] [cursor=pointer]
+            - generic [ref=f6e165]:
+              - text: "Total:"
+              - strong
+          - generic [ref=f6e166]:
+            - button "Cancelar" [ref=f6e167] [cursor=pointer]
+            - button "Guardar cambios" [ref=f6e168] [cursor=pointer]

@@ -1,0 +1,190 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - link [ref=f3e4] [cursor=pointer]:
+        - /url: http://localhost
+        - img "Rapidocompras" [ref=f3e5]
+      - search [ref=f3e6]:
+        - textbox "Buscar producto" [ref=f3e11]:
+          - /placeholder: Buscar producto...
+      - button "Cambiar a modo oscuro" [ref=f3e12] [cursor=pointer]:
+        - generic [ref=f3e15]: Cambiar tema
+  - main [ref=f3e16]:
+    - generic [ref=f3e17]:
+      - navigation "breadcrumb" [ref=f3e18]:
+        - list [ref=f3e19]:
+          - listitem [ref=f3e20]:
+            - link "Inicio" [ref=f3e21] [cursor=pointer]:
+              - /url: http://localhost
+          - listitem [ref=f3e22]: / Catálogo
+      - region "Bienvenida" [ref=f3e23]:
+        - generic [ref=f3e24]:
+          - heading "Los mejores productos para tu día a día" [level=2] [ref=f3e25]: Los mejores productospara tu día a día
+          - paragraph [ref=f3e26]: Calidad y confianza en cada compra.
+      - region "Categorías" [ref=f3e27]:
+        - generic [ref=f3e28]:
+          - heading "Categorías" [level=2] [ref=f3e29]
+          - button "Ver todas" [ref=f3e30] [cursor=pointer]
+        - generic [ref=f3e31]:
+          - link "Todas" [ref=f3e32] [cursor=pointer]:
+            - /url: http://localhost
+          - link "Belleza" [ref=f3e37] [cursor=pointer]:
+            - /url: http://localhost/categorias/belleza
+          - link "Electrodomesticos" [ref=f3e40] [cursor=pointer]:
+            - /url: http://localhost/categorias/electrodomesticos
+          - link "Labore Recusandae" [ref=f3e43] [cursor=pointer]:
+            - /url: http://localhost/categorias/labore-recusandae
+          - link "Laboriosam Iusto" [ref=f3e48] [cursor=pointer]:
+            - /url: http://localhost/categorias/laboriosam-iusto
+          - link "Laptop y celulares" [ref=f3e53] [cursor=pointer]:
+            - /url: http://localhost/categorias/laptop-y-celulares
+          - link "Mascotas" [ref=f3e56] [cursor=pointer]:
+            - /url: http://localhost/categorias/mascotas
+          - link "Temporibus Suscipit" [ref=f3e59] [cursor=pointer]:
+            - /url: http://localhost/categorias/temporibus-suscipit
+          - link "Vitae Commodi" [ref=f3e64] [cursor=pointer]:
+            - /url: http://localhost/categorias/vitae-commodi
+      - button "Filtros" [ref=f3e69] [cursor=pointer]
+      - generic [ref=f3e73]:
+        - complementary
+        - generic [ref=f3e74]:
+          - generic [ref=f3e75]:
+            - heading "Productos" [level=1] [ref=f3e76]
+            - generic [ref=f3e77]: 27 resultados
+          - generic [ref=f3e78]:
+            - link [ref=f3e80] [cursor=pointer]:
+              - /url: http://localhost/productos/et-incidunt-ut-3757
+              - img "Et Incidunt Ut" [ref=f3e82]
+              - generic [ref=f3e83]:
+                - paragraph [ref=f3e84]: Temporibus Suscipit
+                - heading "Et Incidunt Ut" [level=3] [ref=f3e85]
+                - paragraph [ref=f3e86]: 86.07 PEN
+                - generic [ref=f3e87]: Agregar
+            - link [ref=f3e91] [cursor=pointer]:
+              - /url: http://localhost/productos/soluta-inventore-exercitationem-89006
+              - img "Soluta Inventore Exercitationem" [ref=f3e93]
+              - generic [ref=f3e94]:
+                - paragraph [ref=f3e95]: Laboriosam Iusto
+                - heading "Soluta Inventore Exercitationem" [level=3] [ref=f3e96]
+                - paragraph [ref=f3e97]: 236.37 PEN
+                - generic [ref=f3e98]: Agregar
+            - link "Quos Excepturi Adipisci Agotado Temporibus Suscipit Quos Excepturi Adipisci 408.29 PEN Agotado" [ref=f3e102] [cursor=pointer]:
+              - /url: http://localhost/productos/quos-excepturi-adipisci-86309
+              - generic [ref=f3e103]:
+                - img "Quos Excepturi Adipisci" [ref=f3e104]
+                - generic [ref=f3e105]: Agotado
+              - generic [ref=f3e106]:
+                - paragraph [ref=f3e107]: Temporibus Suscipit
+                - heading "Quos Excepturi Adipisci" [level=3] [ref=f3e108]
+                - paragraph [ref=f3e109]: 408.29 PEN
+                - generic: Agotado
+            - link [ref=f3e111] [cursor=pointer]:
+              - /url: http://localhost/productos/ipsa-error-inventore-11601
+              - img "Ipsa Error Inventore" [ref=f3e113]
+              - generic [ref=f3e114]:
+                - paragraph [ref=f3e115]: Temporibus Suscipit
+                - heading "Ipsa Error Inventore" [level=3] [ref=f3e116]
+                - paragraph [ref=f3e117]: 440.42 PEN
+                - generic [ref=f3e118]: Agregar
+            - link [ref=f3e122] [cursor=pointer]:
+              - /url: http://localhost/productos/iure-voluptates-suscipit-47016
+              - img "Iure Voluptates Suscipit" [ref=f3e124]
+              - generic [ref=f3e125]:
+                - paragraph [ref=f3e126]: Labore Recusandae
+                - heading "Iure Voluptates Suscipit" [level=3] [ref=f3e127]
+                - paragraph [ref=f3e128]: 316.31 PEN
+                - generic [ref=f3e129]: Agregar
+            - link [ref=f3e133] [cursor=pointer]:
+              - /url: http://localhost/productos/quia-id-vitae-33401
+              - img "Quia Id Vitae" [ref=f3e135]
+              - generic [ref=f3e136]:
+                - paragraph [ref=f3e137]: Laboriosam Iusto
+                - heading "Quia Id Vitae" [level=3] [ref=f3e138]
+                - paragraph [ref=f3e139]: 246.33 PEN
+                - generic [ref=f3e140]: Agregar
+            - link [ref=f3e144] [cursor=pointer]:
+              - /url: http://localhost/productos/pariatur-distinctio-vero-89161
+              - img "Pariatur Distinctio Vero" [ref=f3e146]
+              - generic [ref=f3e147]:
+                - paragraph [ref=f3e148]: Laboriosam Iusto
+                - heading "Pariatur Distinctio Vero" [level=3] [ref=f3e149]
+                - paragraph [ref=f3e150]: 316.07 PEN
+                - generic [ref=f3e151]: Agregar
+            - link [ref=f3e155] [cursor=pointer]:
+              - /url: http://localhost/productos/reiciendis-voluptas-molestiae-87060
+              - img "Reiciendis Voluptas Molestiae" [ref=f3e157]
+              - generic [ref=f3e158]:
+                - paragraph [ref=f3e159]: Vitae Commodi
+                - heading "Reiciendis Voluptas Molestiae" [level=3] [ref=f3e160]
+                - paragraph [ref=f3e161]: 277.96 PEN
+                - generic [ref=f3e162]: Agregar
+            - link [ref=f3e166] [cursor=pointer]:
+              - /url: http://localhost/productos/aspernatur-consequuntur-sit-25152
+              - img "Aspernatur Consequuntur Sit" [ref=f3e168]
+              - generic [ref=f3e169]:
+                - paragraph [ref=f3e170]: Vitae Commodi
+                - heading "Aspernatur Consequuntur Sit" [level=3] [ref=f3e171]
+                - paragraph [ref=f3e172]: 108.76 PEN
+                - generic [ref=f3e173]: Agregar
+            - link [ref=f3e177] [cursor=pointer]:
+              - /url: http://localhost/productos/et-amet-ipsum-70956
+              - img "Et Amet Ipsum" [ref=f3e179]
+              - generic [ref=f3e180]:
+                - paragraph [ref=f3e181]: Vitae Commodi
+                - heading "Et Amet Ipsum" [level=3] [ref=f3e182]
+                - paragraph [ref=f3e183]: 488.42 PEN
+                - generic [ref=f3e184]: Agregar
+            - link [ref=f3e188] [cursor=pointer]:
+              - /url: http://localhost/productos/aut-quisquam-animi-87929
+              - img "Aut Quisquam Animi" [ref=f3e190]
+              - generic [ref=f3e191]:
+                - paragraph [ref=f3e192]: Labore Recusandae
+                - heading "Aut Quisquam Animi" [level=3] [ref=f3e193]
+                - paragraph [ref=f3e194]: 167.15 PEN
+                - generic [ref=f3e195]: Agregar
+            - link [ref=f3e199] [cursor=pointer]:
+              - /url: http://localhost/productos/illo-tempore-aspernatur-67337
+              - img "Illo Tempore Aspernatur" [ref=f3e201]
+              - generic [ref=f3e202]:
+                - paragraph [ref=f3e203]: Labore Recusandae
+                - heading "Illo Tempore Aspernatur" [level=3] [ref=f3e204]
+                - paragraph [ref=f3e205]: 439.34 PEN
+                - generic [ref=f3e206]: Agregar
+          - navigation [ref=f3e210]:
+            - list [ref=f3e212]:
+              - listitem [ref=f3e213]:
+                - generic: « Previous
+              - listitem [ref=f3e214]:
+                - link "Next »" [ref=f3e215] [cursor=pointer]:
+                  - /url: http://localhost?page=2
+  - contentinfo [ref=f3e216]:
+    - generic [ref=f3e218]:
+      - generic [ref=f3e219]:
+        - heading "Rapidocompras" [level=6] [ref=f3e220]
+        - paragraph [ref=f3e221]: Catálogo online con pedidos directos por WhatsApp.
+      - generic [ref=f3e222]:
+        - heading "Categorías" [level=6] [ref=f3e223]
+        - list [ref=f3e224]:
+          - listitem [ref=f3e225]:
+            - link "Belleza" [ref=f3e226] [cursor=pointer]:
+              - /url: http://localhost/categorias/belleza
+          - listitem [ref=f3e227]:
+            - link "Electrodomesticos" [ref=f3e228] [cursor=pointer]:
+              - /url: http://localhost/categorias/electrodomesticos
+          - listitem [ref=f3e229]:
+            - link "Labore Recusandae" [ref=f3e230] [cursor=pointer]:
+              - /url: http://localhost/categorias/labore-recusandae
+          - listitem [ref=f3e231]:
+            - link "Laboriosam Iusto" [ref=f3e232] [cursor=pointer]:
+              - /url: http://localhost/categorias/laboriosam-iusto
+          - listitem [ref=f3e233]:
+            - link "Laptop y celulares" [ref=f3e234] [cursor=pointer]:
+              - /url: http://localhost/categorias/laptop-y-celulares
+          - listitem [ref=f3e235]:
+            - link "Mascotas" [ref=f3e236] [cursor=pointer]:
+              - /url: http://localhost/categorias/mascotas
+      - generic [ref=f3e237]:
+        - heading "Contacto" [level=6] [ref=f3e238]
+        - link "51944523222" [ref=f3e239] [cursor=pointer]:
+          - /url: https://wa.me/51944523222
+    - generic [ref=f3e242]: © 2026 Rapidocompras

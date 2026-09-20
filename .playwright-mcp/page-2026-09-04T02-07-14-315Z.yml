@@ -1,0 +1,89 @@
+- generic [ref=f10e1]:
+  - navigation [ref=f10e2]:
+    - generic [ref=f10e3]:
+      - generic [ref=f10e4]:
+        - generic [ref=f10e5]: L
+        - img "Rapidocompras" [ref=f10e6]
+      - generic [ref=f10e7]:
+        - button "Cambiar a modo claro" [ref=f10e8] [cursor=pointer]:
+          - generic [ref=f10e11]: Cambiar tema
+        - button "D Demo" [ref=f10e13] [cursor=pointer]:
+          - generic [ref=f10e14]: D
+          - generic [ref=f10e15]: Demo
+  - generic [ref=f10e17]:
+    - list [ref=f10e19]:
+      - listitem [ref=f10e20]:
+        - link "Productos" [ref=f10e21] [cursor=pointer]:
+          - /url: http://localhost/admin/productos
+      - listitem [ref=f10e24]:
+        - link "Categorías" [ref=f10e25] [cursor=pointer]:
+          - /url: http://localhost/admin/categorias
+      - listitem [ref=f10e28]:
+        - link "Pedidos" [ref=f10e29] [cursor=pointer]:
+          - /url: http://localhost/admin/pedidos
+      - listitem [ref=f10e32]:
+        - link "Configuración" [ref=f10e33] [cursor=pointer]:
+          - /url: http://localhost/admin/configuracion
+    - main [ref=f10e36]:
+      - heading "Configuración" [level=1] [ref=f10e37]
+      - generic [ref=f10e39]:
+        - tablist [ref=f10e40]:
+          - tab "Tienda" [ref=f10e41] [cursor=pointer]
+          - tab "Aspecto visual" [active] [selected] [ref=f10e42] [cursor=pointer]
+        - generic [ref=f10e43]:
+          - tabpanel "Aspecto visual" [ref=f10e63]:
+            - paragraph [ref=f10e64]: Define los colores de tu empresa. Se aplican al catálogo público y al panel de administración. Si dejas un campo vacío se usa el color por defecto.
+            - generic [ref=f10e65]:
+              - generic [ref=f10e66]: Vista previa
+              - generic [ref=f10e67]:
+                - button "Botón" [ref=f10e68] [cursor=pointer]
+                - generic [ref=f10e69]: Menú
+            - generic [ref=f10e70]:
+              - generic [ref=f10e71]: Color primario
+              - generic [ref=f10e72]:
+                - textbox [ref=f10e73] [cursor=pointer]: "#ad42c2"
+                - textbox "Color primario" [ref=f10e74]:
+                  - /placeholder: "#RRGGBB"
+                  - text: "#ad42c2"
+                - button "Por defecto" [ref=f10e75] [cursor=pointer]
+            - generic [ref=f10e76]:
+              - generic [ref=f10e77]: Color secundario
+              - generic [ref=f10e78]:
+                - textbox [ref=f10e79] [cursor=pointer]: "#05851a"
+                - textbox "Color secundario" [ref=f10e80]:
+                  - /placeholder: "#RRGGBB"
+                  - text: "#05851a"
+                - button "Por defecto" [ref=f10e81] [cursor=pointer]
+            - generic [ref=f10e82]:
+              - generic [ref=f10e83]: Color de botones
+              - generic [ref=f10e84]:
+                - textbox [ref=f10e85] [cursor=pointer]: "#69bd14"
+                - textbox "Color de botones" [ref=f10e86]:
+                  - /placeholder: "#RRGGBB"
+                  - text: "#69bd14"
+                - button "Por defecto" [ref=f10e87] [cursor=pointer]
+            - generic [ref=f10e88]:
+              - generic [ref=f10e89]: Color del menú
+              - generic [ref=f10e90]:
+                - textbox [ref=f10e91] [cursor=pointer]: "#0dc93c"
+                - textbox "Color del menú" [ref=f10e92]:
+                  - /placeholder: "#RRGGBB"
+                  - text: "#0dc93c"
+                - button "Por defecto" [ref=f10e93] [cursor=pointer]
+            - generic [ref=f10e94]:
+              - generic [ref=f10e95]: Color de fondo
+              - generic [ref=f10e96]:
+                - textbox [ref=f10e97] [cursor=pointer]: "#dedede"
+                - textbox "Color de fondo" [ref=f10e98]:
+                  - /placeholder: "#RRGGBB"
+                  - text: "#dedede"
+                - button "Por defecto" [ref=f10e99] [cursor=pointer]
+            - generic [ref=f10e100]:
+              - generic [ref=f10e101]: Color de texto
+              - generic [ref=f10e102]:
+                - textbox [ref=f10e103] [cursor=pointer]: "#000000"
+                - textbox "Color de texto" [ref=f10e104]:
+                  - /placeholder: "#RRGGBB"
+                  - text: "#000000"
+                - button "Por defecto" [ref=f10e105] [cursor=pointer]
+          - button "Guardar" [ref=f10e62] [cursor=pointer]

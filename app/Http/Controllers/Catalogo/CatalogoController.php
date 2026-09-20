@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Catalogo;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\StoreSetting;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -15,8 +16,10 @@ class CatalogoController extends Controller
     {
         $productos = $this->filteredProducts($request)->paginate(12)->withQueryString();
         $categorias = Category::orderBy('name')->get();
+        $currency = StoreSetting::current()->currency;
+        $footerCategorias = Category::orderBy('name')->limit(6)->get();
 
-        return view('catalogo.index', compact('productos', 'categorias'));
+        return view('catalogo.index', compact('productos', 'categorias', 'currency', 'footerCategorias'));
     }
 
     public function byCategory(Request $request, Category $categoria): View
@@ -26,19 +29,24 @@ class CatalogoController extends Controller
             ->paginate(12)
             ->withQueryString();
         $categorias = Category::orderBy('name')->get();
+        $currency = StoreSetting::current()->currency;
+        $footerCategorias = Category::orderBy('name')->limit(6)->get();
 
         return view('catalogo.index', [
             'productos' => $productos,
             'categorias' => $categorias,
             'categoriaActual' => $categoria,
+            'currency' => $currency,
+            'footerCategorias' => $footerCategorias,
         ]);
     }
 
     public function show(Product $producto): View
     {
-        $producto->load(['images', 'category']);
+        $producto->load(['images', 'primaryImage', 'category']);
+        $footerCategorias = Category::orderBy('name')->limit(6)->get();
 
-        return view('catalogo.show', compact('producto'));
+        return view('catalogo.show', compact('producto', 'footerCategorias'));
     }
 
     private function filteredProducts(Request $request): Builder

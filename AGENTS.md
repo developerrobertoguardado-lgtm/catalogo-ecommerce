@@ -88,8 +88,12 @@ generar el pipeline correspondiente y actualizar este archivo y
 - `testing-specialist` — convenciones de tests con Pest en este proyecto.
 
 ## Comandos SDD disponibles
+Guardados en `.opencode/commands/` (formato de comandos de opencode):
 - `/spec-new` — crea la spec de una nueva feature con preguntas guiadas
 - `/spec-review` — revisa una spec existente contra el código actual
 - `/fix` — flujo guiado para corregir un bug (repro → mini-spec → parche → test)
 - `/test` — genera/corre tests según `/spec/05-testing-strategy.md`
 - `/cicd` — genera o actualiza el pipeline de CI/CD (GitHub Actions)
+
+Los skills especializados viven en `.claude/skills/`:
+- `laravel-specialist`, `postgres-specialist`, `testing-specialist`

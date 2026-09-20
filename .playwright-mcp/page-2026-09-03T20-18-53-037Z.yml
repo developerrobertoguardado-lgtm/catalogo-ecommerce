@@ -1,0 +1,105 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Tienda de roberto" [ref=e5] [cursor=pointer]:
+        - /url: http://localhost
+      - textbox "Buscar producto..." [ref=e11]
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - navigation "breadcrumb" [ref=e14]:
+        - list [ref=e15]:
+          - listitem [ref=e16]:
+            - link "Inicio" [ref=e17] [cursor=pointer]:
+              - /url: http://localhost
+          - listitem [ref=e18]:
+            - text: /
+            - link "Quia Sint" [ref=e19] [cursor=pointer]:
+              - /url: http://localhost/categorias/quia-sint
+          - listitem [ref=e20]: / Labore Ducimus Ea
+      - generic [ref=e21]:
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - img "Foto 1" [ref=e27]
+            - button [ref=e28] [cursor=pointer]
+            - button [ref=e30] [cursor=pointer]
+          - generic [ref=e32]:
+            - img "Miniatura 1" [ref=e33] [cursor=pointer]
+            - img "Miniatura 2" [ref=e34] [cursor=pointer]
+        - generic [ref=e35]:
+          - paragraph [ref=e36]: Quia Sint
+          - heading "Labore Ducimus Ea" [level=1] [ref=e37]
+          - generic [ref=e38]:
+            - paragraph [ref=e39]: 356.65 PEN
+            - generic [ref=e40]: En stock
+          - paragraph [ref=e41]: Reprehenderit fugiat qui ut earum natus. Ab doloremque voluptatem aut qui magni reiciendis. Sequi commodi dolorem dolores.
+          - generic [ref=e43]:
+            - generic [ref=e44]: Cantidad
+            - generic [ref=e45]:
+              - generic [ref=e46]:
+                - button [ref=e47] [cursor=pointer]
+                - spinbutton [ref=e49]: "1"
+                - button [ref=e50] [cursor=pointer]
+              - paragraph [ref=e53]: "Total: 356.65 PEN"
+            - button "Comprar por WhatsApp" [ref=e54] [cursor=pointer]
+    - dialog [active] [ref=e81]:
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - heading "Datos del pedido" [level=2] [ref=e84]
+          - button "Cerrar" [ref=e85] [cursor=pointer]
+        - generic [ref=e86]:
+          - generic [ref=e88]:
+            - generic [ref=e89]:
+              - strong [ref=e90]: Labore Ducimus Ea
+              - text: · unidad(es)
+            - generic [ref=e91]: "Total: PEN"
+          - generic [ref=e92]:
+            - generic [ref=e93]:
+              - generic [ref=e94]: Nombre completo
+              - textbox "Nombre completo" [ref=e95]
+            - generic [ref=e96]:
+              - generic [ref=e97]: Número telefónico
+              - textbox "Número telefónico" [ref=e98]
+            - generic [ref=e99]:
+              - generic [ref=e100]: Zona de entrega
+              - combobox "Zona de entrega" [ref=e101]:
+                - option "Selecciona una zona" [selected]
+                - option "Lima"
+                - option "Provincias"
+            - generic [ref=e102]:
+              - generic [ref=e103]: Ciudad
+              - textbox "Ciudad" [ref=e104]
+            - generic [ref=e105]:
+              - generic [ref=e106]: Dirección completa
+              - textbox "Dirección completa" [ref=e107]
+            - generic [ref=e108]:
+              - generic [ref=e109]: Referencias o notas (opcional)
+              - textbox "Referencias o notas (opcional)" [ref=e110]:
+                - /placeholder: Referencia para entrega o nota de pasos para llamar o entregar
+        - generic [ref=e111]:
+          - button "Cancelar" [ref=e112] [cursor=pointer]
+          - button [ref=e113] [cursor=pointer]
+  - contentinfo [ref=e58]:
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - heading "Tienda de roberto" [level=6] [ref=e62]
+        - paragraph [ref=e63]: Catálogo online con pedidos directos por WhatsApp.
+      - generic [ref=e64]:
+        - heading "Categorías" [level=6] [ref=e65]
+        - list [ref=e66]:
+          - listitem [ref=e67]:
+            - link "Dolorem Voluptatem" [ref=e68] [cursor=pointer]:
+              - /url: http://localhost/categorias/dolorem-voluptatem
+          - listitem [ref=e69]:
+            - link "Enim Hic" [ref=e70] [cursor=pointer]:
+              - /url: http://localhost/categorias/enim-hic
+          - listitem [ref=e71]:
+            - link "Maxime Placeat" [ref=e72] [cursor=pointer]:
+              - /url: http://localhost/categorias/maxime-placeat
+          - listitem [ref=e73]:
+            - link "Quia Sint" [ref=e74] [cursor=pointer]:
+              - /url: http://localhost/categorias/quia-sint
+      - generic [ref=e75]:
+        - heading "Contacto" [level=6] [ref=e76]
+        - link "51999999999" [ref=e77] [cursor=pointer]:
+          - /url: https://wa.me/51999999999
+    - generic [ref=e80]: © 2026 Tienda de roberto

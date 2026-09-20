@@ -4,13 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script>document.documentElement.dataset.theme = localStorage.getItem('ecommerce-theme') === 'dark' ? 'dark' : 'light';</script>
     <title>Iniciar sesión — {{ config('app.name') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-light">
+<body class="auth-shell">
     <div class="d-flex align-items-center justify-content-center min-vh-100">
         <div class="card shadow-sm" style="width: 100%; max-width: 24rem;">
             <div class="card-body p-4">
+                <div class="d-flex justify-content-end mb-3"><x-theme-toggle /></div>
+                <x-alertas />
                 <div class="text-center mb-4">
                     <span class="avatar-circle bg-primary text-white mx-auto mb-2" style="width:2.5rem;height:2.5rem;">
                         {{ \Illuminate\Support\Str::substr(config('app.name'), 0, 1) }}
@@ -19,17 +22,7 @@
                     <p class="text-muted small">Panel administrativo</p>
                 </div>
 
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul class="mb-0 ps-3">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('login') }}" data-lock-on-submit>
                     @csrf
 
                     <div class="mb-3">

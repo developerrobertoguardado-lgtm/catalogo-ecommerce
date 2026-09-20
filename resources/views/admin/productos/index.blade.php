@@ -38,9 +38,27 @@
         </button>
     </div>
 
-    <div class="card">
+    <div class="card mb-3">
+        <div class="card-body">
+            <form method="GET" action="{{ route('admin.productos.index') }}" class="row g-2 align-items-end">
+                <div class="col-md-8">
+                    <label for="buscar-productos" class="form-label">Buscar productos</label>
+                    <input type="search" id="buscar-productos" name="buscar" value="{{ $buscar }}"
+                           placeholder="Nombre o descripción" class="form-control">
+                </div>
+                <div class="col-md-auto d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                    @if ($buscar !== '')
+                        <a href="{{ route('admin.productos.index') }}" class="btn btn-outline-secondary">Limpiar</a>
+                    @endif
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card sash-table-card">
         <div class="table-responsive">
-            <table class="table table-hover align-middle mb-0">
+            <table class="table table-hover align-middle sash-table mb-0">
                 <thead class="table-light">
                     <tr>
                         <th>Foto</th>
@@ -74,11 +92,11 @@
                                     <span class="badge text-bg-success-subtle text-success-emphasis">{{ $producto->stock }} unidades</span>
                                 @endif
                             </td>
-                            <td class="text-end">
+                                <td class="text-end sash-actions">
                                 <button type="button" class="btn btn-link btn-sm p-0 me-3" data-bs-toggle="modal" data-bs-target="#modalEditarProducto{{ $producto->id }}">
                                     Editar
                                 </button>
-                                <form method="POST" action="{{ route('admin.productos.destroy', $producto) }}" class="d-inline" onsubmit="return confirm('¿Eliminar este producto?');">
+                                <form method="POST" action="{{ route('admin.productos.destroy', $producto) }}" class="d-inline" data-confirm="¿Eliminar este producto?" data-confirm-title="Eliminar producto">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-link btn-sm p-0 text-danger">Eliminar</button>
@@ -87,7 +105,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6" class="text-center text-muted py-4">No hay productos todavía.</td>
+                            <td colspan="6" class="text-center text-muted py-4">Sin resultados disponibles</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -103,7 +121,7 @@
     <div class="modal fade" id="modalNuevoProducto" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <form method="POST" action="{{ route('admin.productos.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.productos.store') }}" enctype="multipart/form-data" data-lock-on-submit>
                     @csrf
                     <input type="hidden" name="_modal" value="modalNuevoProducto">
                     <div class="modal-header">
@@ -127,7 +145,7 @@
         <div class="modal fade" id="modalEditarProducto{{ $producto->id }}" tabindex="-1">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <form method="POST" action="{{ route('admin.productos.update', $producto) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.productos.update', $producto) }}" enctype="multipart/form-data" data-lock-on-submit>
                         @csrf
                         @method('PUT')
                         <input type="hidden" name="_modal" value="modalEditarProducto{{ $producto->id }}">

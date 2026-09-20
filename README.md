@@ -76,6 +76,13 @@ reemplazo de Tailwind (usado en la primera versión del proyecto).
 
 ## Instalación y arranque local
 
+### Script automático (Windows Git Bash / macOS / Linux)
+
+```bash
+bash setup.sh              # instalación completa
+bash setup.sh --reinstall  # limpia node_modules y reinstala (fix @rollup)
+```
+
 ### macOS, Linux o Windows con WSL2
 
 ```bash
@@ -177,18 +184,199 @@ actual: CRUD de productos/categorías (incluyendo el límite de 4 fotos y el
 reordenamiento vía dropzone), filtros del catálogo, generación del mensaje y
 link de WhatsApp, y creación de `Order`/`OrderItem`.
 
-## Usuario administrador de ejemplo
+## Usuarios de ejemplo
 
-Creado por el `DatabaseSeeder`:
+Creados por el `DatabaseSeeder` para que cualquiera pueda probar la app al instante:
 
-- **Email:** `admin@example.com`
-- **Password:** `password`
+| Rol | Email | Password | Notas |
+|---|---|---|---|
+| **Administrador** | `admin@example.com` | `password` | Acceso completo al panel `/admin` (CRUD productos, categorías, pedidos, configuración, paleta de colores). |
+| **Demo** | `demo@example.com` | `demo12345` | Usuario de prueba con datos de ejemplo pre-cargados (4 categorías × 3 productos cada una con foto). |
+
+> **Importante:** El password de `admin@example.com` se genera con el factory por defecto (`password`). El usuario `demo@example.com` tiene un password explícito (`demo12345`). Cambia ambos en producción.
 
 ## Despliegue
 
 Sin CD configurado todavía (ver el ADR correspondiente en
 [`spec/02-architecture.md`](spec/02-architecture.md)). Cuando se defina un
 destino de despliegue, usar el comando `/cicd` para generar el pipeline.
+
+### Despliegue en Dokploy
+
+Dokploy es una alternativa open-source a Heroku/Vercel que corre sobre Docker.
+Sigue estos pasos para desplegar esta aplicación en Dokploy.
+
+> **Nota:** El repositorio usa **Laravel Sail** para desarrollo local (`compose.yaml`), que no incluye un `Dockerfile` de producción. Para Dokploy necesitarás crear un `Dockerfile` en la raíz (ver ejemplo abajo) o usar el **Buildpack "Dockerfile"** apuntando a uno que añadas.
+
+#### 1. Crear `Dockerfile` de producción (en la raíz del repo)
+
+```dockerfile
+# ---- Builder stage ----
+FROM node:20-alpine AS frontend
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+# ---- PHP/FPM + Nginx stage ----
+FROM php:8.3-fpm-alpine
+
+# Extensiones necesarias
+RUN apk add --no-cache \
+    nginx \
+    supervisor \
+    libpng-dev \
+    libjpeg-turbo-dev \
+    freetype-dev \
+    libzip-dev \
+    postgresql-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) \
+    pdo_pgsql \
+    gd \
+    zip \
+    bcmath \
+    opcache
+
+# Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Código de la app
+WORKDIR /var/www/html
+COPY . .
+COPY --from=frontend /app/public/build ./public/build
+
+# Permisos y cache
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache \
+    && composer install --optimize-autoloader --no-dev --no-interaction \
+    && php artisan config:cache \
+    && php artisan route:cache \
+    && php artisan view:cache \
+    && php artisan storage:link
+
+# Nginx + Supervisor config
+COPY docker/nginx.conf /etc/nginx/http.d/default.conf
+COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+EXPOSE 80
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+```
+
+> **Archivos auxiliares necesarios** (crea la carpeta `docker/` en la raíz):
+> - `docker/nginx.conf` — configuración de Nginx para Laravel (ver más abajo)
+> - `docker/supervisord.conf` — supervisa php-fpm + nginx
+
+#### 2. `docker/nginx.conf` (configuración Nginx)
+
+```nginx
+server {
+    listen 80;
+    server_name _;
+    root /var/www/html/public;
+    index index.php;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+```
+
+#### 3. `docker/supervisord.conf`
+
+```ini
+[supervisord]
+nodaemon=true
+
+[program:php-fpm]
+command=php-fpm8.3 -F
+user=root
+autostart=true
+autorestart=true
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0
+stderr_logfile=/dev/stderr
+stderr_logfile_maxbytes=0
+
+[program:nginx]
+command=nginx -g "daemon off;"
+user=root
+autostart=true
+autorestart=true
+stdout_logfile=/dev/stdout
+stdout_logfile_maxbytes=0
+stderr_logfile=/dev/stderr
+stderr_logfile_maxbytes=0
+```
+
+#### 4. Preparar el repositorio
+
+```bash
+git add Dockerfile docker/nginx.conf docker/supervisord.conf
+git commit -m "Add production Dockerfile for Dokploy"
+git push origin main
+```
+
+#### 5. En Dokploy: Crear el proyecto
+
+1. Dashboard → **New Project** → **Git Repository**
+2. Conecta tu repositorio, branch `main`
+3. **Build Pack**: **Dockerfile** (usa el que acabas de crear)
+
+#### 6. Variables de entorno en Dokploy
+
+En **Environment Variables** del proyecto:
+
+| Variable | Valor | Obligatoria |
+|---|---|---|
+| `APP_ENV` | `production` | Sí |
+| `APP_DEBUG` | `false` | Sí |
+| `APP_KEY` | `php artisan key:generate --show` | Sí |
+| `APP_URL` | `https://tu-proyecto.dokploy.app` | Sí |
+| `DB_CONNECTION` | `pgsql` | Sí |
+| `DB_HOST` | `postgres` | Sí |
+| `DB_PORT` | `5432` | Sí |
+| `DB_DATABASE` | `ecommerce` | Sí |
+| `DB_USERNAME` | (tu usuario PG) | Sí |
+| `DB_PASSWORD` | (tu password PG) | Sí |
+| `WHATSAPP_NUMBER` | `51999999999` | No |
+
+> **Tip:** Crea la base de datos en Dokploy → **Databases** → **PostgreSQL** y usa esas credenciales.
+
+#### 7. Desplegar
+
+Haz clic en **Deploy**. El primer deploy:
+1. Construye la imagen con tu `Dockerfile`
+2. Ejecuta migraciones (`php artisan migrate --force`) al arrancar el contenedor
+3. Expone la app en `https://tu-proyecto.dokploy.app`
+
+#### 8. Primer acceso
+
+- Usuario: `admin@example.com` / `password`
+- Configura WhatsApp, moneda y paleta de colores en **Configuración → Aspecto visual**
+- **Cambia la contraseña** del admin tras el primer login
+
+#### 9. Dominio personalizado + SSL
+
+Dokploy → **Domains** → **Add Domain** → apunta tu DNS → activa **SSL (Let's Encrypt)**.
 
 ## Documentación y Spec-Driven Development
 

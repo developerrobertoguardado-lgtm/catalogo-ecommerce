@@ -1,0 +1,50 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: L
+        - img "Rapidocompras" [ref=e6]
+      - generic [ref=e7]:
+        - button "Cambiar a modo claro" [ref=e8] [cursor=pointer]:
+          - generic [ref=e11]: Cambiar tema
+        - button "D Demo" [ref=e13] [cursor=pointer]:
+          - generic [ref=e14]: D
+          - generic [ref=e15]: Demo
+  - generic [ref=e17]:
+    - list [ref=e19]:
+      - listitem [ref=e20]:
+        - link "Productos" [ref=e21] [cursor=pointer]:
+          - /url: http://localhost/admin/productos
+      - listitem [ref=e24]:
+        - link "Categorías" [ref=e25] [cursor=pointer]:
+          - /url: http://localhost/admin/categorias
+      - listitem [ref=e28]:
+        - link "Pedidos" [ref=e29] [cursor=pointer]:
+          - /url: http://localhost/admin/pedidos
+      - listitem [ref=e32]:
+        - link "Configuración" [ref=e33] [cursor=pointer]:
+          - /url: http://localhost/admin/configuracion
+    - main [ref=e36]:
+      - heading "Configuración" [level=1] [ref=e37]
+      - generic [ref=e39]:
+        - tablist [ref=e40]:
+          - tab "Tienda" [selected] [ref=e41] [cursor=pointer]
+          - tab "Aspecto visual" [ref=e42] [cursor=pointer]
+        - generic [ref=e43]:
+          - tabpanel "Tienda" [ref=e45]:
+            - generic [ref=e46]:
+              - generic [ref=e47]: Nombre de la tienda
+              - textbox "Nombre de la tienda" [ref=e48]: Rapidocompras
+            - generic [ref=e49]:
+              - generic [ref=e50]: Logo de la tienda
+              - generic [ref=e52] [cursor=pointer]:
+                - img "Vista previa del logo" [ref=e53]
+                - button "Eliminar logo" [ref=e54]: ×
+              - generic [ref=e55]: PNG, JPG, JPEG o WEBP. Máximo 2 MB.
+            - generic [ref=e56]:
+              - generic [ref=e57]: Número de WhatsApp (solo dígitos, con código de país)
+              - textbox "Número de WhatsApp (solo dígitos, con código de país)" [ref=e58]: "51951139928"
+            - generic [ref=e59]:
+              - generic [ref=e60]: Moneda
+              - textbox "Moneda" [ref=e61]: PEN
+          - button "Guardar" [ref=e62] [cursor=pointer]

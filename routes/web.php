@@ -14,6 +14,7 @@ Route::get('/', [CatalogoController::class, 'index'])->name('catalogo.index');
 Route::get('/productos/{producto:slug}', [CatalogoController::class, 'show'])->name('catalogo.show');
 Route::get('/categorias/{categoria:slug}', [CatalogoController::class, 'byCategory'])->name('catalogo.categoria');
 Route::post('/pedidos', [PedidoController::class, 'store'])->name('pedidos.store');
+Route::get('/pedidos/{pedido}/whatsapp', [PedidoController::class, 'whatsapp'])->name('pedidos.whatsapp');
 
 // Autenticación de administrador
 Route::middleware('guest')->group(function () {
@@ -32,12 +33,17 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         'productos' => 'producto',
     ])->except(['show', 'create', 'edit']);
 
+    Route::get('productos/search', [AdminProductController::class, 'search'])->name('productos.search');
+
     Route::resource('categorias', AdminCategoryController::class)->parameters([
         'categorias' => 'categoria',
     ])->except(['show', 'create', 'edit']);
 
     Route::get('pedidos', [AdminOrderController::class, 'index'])->name('pedidos.index');
     Route::get('pedidos/{pedido}', [AdminOrderController::class, 'show'])->name('pedidos.show');
+    Route::get('pedidos/{pedido}/edit', [AdminOrderController::class, 'edit'])->name('pedidos.edit');
+    Route::put('pedidos/{pedido}', [AdminOrderController::class, 'update'])->name('pedidos.update');
+    Route::get('pedidos/{pedido}/status-log', [AdminOrderController::class, 'statusLog'])->name('pedidos.status-log');
 
     Route::get('configuracion', [StoreSettingController::class, 'edit'])->name('configuracion.edit');
     Route::put('configuracion', [StoreSettingController::class, 'update'])->name('configuracion.update');

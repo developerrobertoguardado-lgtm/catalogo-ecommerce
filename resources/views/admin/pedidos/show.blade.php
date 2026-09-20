@@ -17,8 +17,8 @@
             </div>
 
             <h2 class="h6 fw-semibold border-top pt-3 mt-2">Productos</h2>
-            <div class="table-responsive">
-                <table class="table mb-0">
+            <div class="table-responsive sash-table-card-inner">
+                <table class="table sash-table mb-0">
                     <thead>
                         <tr>
                             <th>Producto</th>

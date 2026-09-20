@@ -1,0 +1,190 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e4]:
+      - link [ref=f1e5] [cursor=pointer]:
+        - /url: http://localhost
+        - img "Rapidocompras" [ref=f1e6]
+      - textbox "Buscar por nombre" [ref=f1e12]:
+        - /placeholder: Buscar producto...
+  - main [ref=f1e13]:
+    - generic [ref=f1e14]:
+      - navigation "breadcrumb" [ref=f1e15]:
+        - list [ref=f1e16]:
+          - listitem [ref=f1e17]:
+            - link "Inicio" [ref=f1e18] [cursor=pointer]:
+              - /url: http://localhost
+          - listitem [ref=f1e19]: / Catálogo
+      - generic [ref=f1e20]:
+        - complementary [ref=f1e21]:
+          - generic [ref=f1e23]:
+            - generic [ref=f1e24]: Buscar por nombre
+            - textbox "Buscar producto..." [ref=f1e29]
+            - generic [ref=f1e30]:
+              - generic [ref=f1e31]:
+                - heading [level=2] [ref=f1e32]:
+                  - button "Categoría" [ref=f1e33] [cursor=pointer]
+                - generic [ref=f1e36]:
+                  - generic [ref=f1e37]:
+                    - radio "Todas" [checked] [ref=f1e38]
+                    - generic [ref=f1e39] [cursor=pointer]: Todas
+                  - generic [ref=f1e40]:
+                    - radio "Dolorem Voluptatem" [ref=f1e41]
+                    - generic [ref=f1e42] [cursor=pointer]: Dolorem Voluptatem
+                  - generic [ref=f1e47]:
+                    - radio "Enim Hic" [ref=f1e48]
+                    - generic [ref=f1e49] [cursor=pointer]: Enim Hic
+                  - generic [ref=f1e54]:
+                    - radio "Maxime Placeat" [ref=f1e55]
+                    - generic [ref=f1e56] [cursor=pointer]: Maxime Placeat
+                  - generic [ref=f1e61]:
+                    - radio "Quia Sint" [ref=f1e62]
+                    - generic [ref=f1e63] [cursor=pointer]: Quia Sint
+              - generic [ref=f1e68]:
+                - heading [level=2] [ref=f1e69]:
+                  - button "Precio" [ref=f1e70] [cursor=pointer]
+                - generic [ref=f1e78]:
+                  - spinbutton "Mín." [ref=f1e80]
+                  - spinbutton "Máx." [ref=f1e82]
+            - button "Filtrar" [ref=f1e83] [cursor=pointer]
+        - generic [ref=f1e84]:
+          - generic [ref=f1e85]:
+            - link [ref=f1e87] [cursor=pointer]:
+              - /url: http://localhost/productos/fotorepro-dSR1RP
+              - img "FotoRepro" [ref=f1e89]
+              - generic [ref=f1e90]:
+                - paragraph [ref=f1e91]: Dolorem Voluptatem
+                - heading "FotoRepro" [level=3] [ref=f1e92]
+                - paragraph [ref=f1e93]: 10.00 PEN
+                - generic [ref=f1e94]: Agregar
+            - link [ref=f1e98] [cursor=pointer]:
+              - /url: http://localhost/productos/fotorepro-WQUPDd
+              - img "FotoRepro" [ref=f1e100]
+              - generic [ref=f1e101]:
+                - paragraph [ref=f1e102]: Dolorem Voluptatem
+                - heading "FotoRepro" [level=3] [ref=f1e103]
+                - paragraph [ref=f1e104]: 10.00 PEN
+                - generic [ref=f1e105]: Agregar
+            - link [ref=f1e109] [cursor=pointer]:
+              - /url: http://localhost/productos/producto-de-prueba-modal-fmJSaa
+              - img "Producto de Prueba Modal" [ref=f1e111]
+              - generic [ref=f1e112]:
+                - paragraph [ref=f1e113]: Quia Sint
+                - heading "Producto de Prueba Modal" [level=3] [ref=f1e114]
+                - paragraph [ref=f1e115]: 19.99 PEN
+                - generic [ref=f1e116]: Agregar
+            - link "Voluptas Sapiente Beatae Últimas unidades Enim Hic Voluptas Sapiente Beatae 26.53 PEN Agregar" [ref=f1e120] [cursor=pointer]:
+              - /url: http://localhost/productos/voluptas-sapiente-beatae-6002
+              - generic [ref=f1e121]:
+                - img "Voluptas Sapiente Beatae" [ref=f1e122]
+                - generic [ref=f1e123]: Últimas unidades
+              - generic [ref=f1e124]:
+                - paragraph [ref=f1e125]: Enim Hic
+                - heading "Voluptas Sapiente Beatae" [level=3] [ref=f1e126]
+                - paragraph [ref=f1e127]: 26.53 PEN
+                - generic [ref=f1e128]: Agregar
+            - link [ref=f1e132] [cursor=pointer]:
+              - /url: http://localhost/productos/dolorem-et-aut-47844
+              - img "Dolorem Et Aut" [ref=f1e134]
+              - generic [ref=f1e135]:
+                - paragraph [ref=f1e136]: Enim Hic
+                - heading "Dolorem Et Aut" [level=3] [ref=f1e137]
+                - paragraph [ref=f1e138]: 50.12 PEN
+                - generic [ref=f1e139]: Agregar
+            - link [ref=f1e143] [cursor=pointer]:
+              - /url: http://localhost/productos/odit-facilis-qui-71224
+              - img "Odit Facilis Qui" [ref=f1e145]
+              - generic [ref=f1e146]:
+                - paragraph [ref=f1e147]: Enim Hic
+                - heading "Odit Facilis Qui" [level=3] [ref=f1e148]
+                - paragraph [ref=f1e149]: 434.02 PEN
+                - generic [ref=f1e150]: Agregar
+            - link [ref=f1e154] [cursor=pointer]:
+              - /url: http://localhost/productos/ratione-nulla-et-90178
+              - img "Ratione Nulla Et" [ref=f1e156]
+              - generic [ref=f1e157]:
+                - paragraph [ref=f1e158]: Dolorem Voluptatem
+                - heading "Ratione Nulla Et" [level=3] [ref=f1e159]
+                - paragraph [ref=f1e160]: 114.45 PEN
+                - generic [ref=f1e161]: Agregar
+            - link [ref=f1e165] [cursor=pointer]:
+              - /url: http://localhost/productos/labore-ducimus-ea-70755
+              - img "Labore Ducimus Ea" [ref=f1e167]
+              - generic [ref=f1e168]:
+                - paragraph [ref=f1e169]: Quia Sint
+                - heading "Labore Ducimus Ea" [level=3] [ref=f1e170]
+                - paragraph [ref=f1e171]: 356.65 PEN
+                - generic [ref=f1e172]: Agregar
+            - link [ref=f1e176] [cursor=pointer]:
+              - /url: http://localhost/productos/ipsum-quia-eum-1247
+              - img "Ipsum Quia Eum" [ref=f1e178]
+              - generic [ref=f1e179]:
+                - paragraph [ref=f1e180]: Dolorem Voluptatem
+                - heading "Ipsum Quia Eum" [level=3] [ref=f1e181]
+                - paragraph [ref=f1e182]: 451.77 PEN
+                - generic [ref=f1e183]: Agregar
+            - link [ref=f1e187] [cursor=pointer]:
+              - /url: http://localhost/productos/in-delectus-aut-55234
+              - img "In Delectus Aut" [ref=f1e189]
+              - generic [ref=f1e190]:
+                - paragraph [ref=f1e191]: Maxime Placeat
+                - heading "In Delectus Aut" [level=3] [ref=f1e192]
+                - paragraph [ref=f1e193]: 428.50 PEN
+                - generic [ref=f1e194]: Agregar
+            - link "Quas Rerum Voluptates Últimas unidades Maxime Placeat Quas Rerum Voluptates 347.63 PEN Agregar" [ref=f1e198] [cursor=pointer]:
+              - /url: http://localhost/productos/quas-rerum-voluptates-22459
+              - generic [ref=f1e199]:
+                - img "Quas Rerum Voluptates" [ref=f1e200]
+                - generic [ref=f1e201]: Últimas unidades
+              - generic [ref=f1e202]:
+                - paragraph [ref=f1e203]: Maxime Placeat
+                - heading "Quas Rerum Voluptates" [level=3] [ref=f1e204]
+                - paragraph [ref=f1e205]: 347.63 PEN
+                - generic [ref=f1e206]: Agregar
+            - link [ref=f1e210] [cursor=pointer]:
+              - /url: http://localhost/productos/sapiente-architecto-repudiandae-13445
+              - img "Sapiente Architecto Repudiandae" [ref=f1e212]
+              - generic [ref=f1e213]:
+                - paragraph [ref=f1e214]: Maxime Placeat
+                - heading "Sapiente Architecto Repudiandae" [level=3] [ref=f1e215]
+                - paragraph [ref=f1e216]: 317.89 PEN
+                - generic [ref=f1e217]: Agregar
+          - navigation [ref=f1e221]:
+            - generic [ref=f1e222]:
+              - paragraph [ref=f1e224]: Showing 1 to 12 of 15 results
+              - list [ref=f1e226]:
+                - listitem "« Previous" [ref=f1e227]:
+                  - generic [aria-hidden]: ‹
+                - listitem [ref=f1e228]:
+                  - generic [ref=f1e229]: "1"
+                - listitem [ref=f1e230]:
+                  - link "2" [ref=f1e231] [cursor=pointer]:
+                    - /url: http://localhost?page=2
+                - listitem [ref=f1e232]:
+                  - link "Next »" [ref=f1e233] [cursor=pointer]:
+                    - /url: http://localhost?page=2
+                    - text: ›
+  - contentinfo [ref=f1e234]:
+    - generic [ref=f1e236]:
+      - generic [ref=f1e237]:
+        - heading "Rapidocompras" [level=6] [ref=f1e238]
+        - paragraph [ref=f1e239]: Catálogo online con pedidos directos por WhatsApp.
+      - generic [ref=f1e240]:
+        - heading "Categorías" [level=6] [ref=f1e241]
+        - list [ref=f1e242]:
+          - listitem [ref=f1e243]:
+            - link "Dolorem Voluptatem" [ref=f1e244] [cursor=pointer]:
+              - /url: http://localhost/categorias/dolorem-voluptatem
+          - listitem [ref=f1e245]:
+            - link "Enim Hic" [ref=f1e246] [cursor=pointer]:
+              - /url: http://localhost/categorias/enim-hic
+          - listitem [ref=f1e247]:
+            - link "Maxime Placeat" [ref=f1e248] [cursor=pointer]:
+              - /url: http://localhost/categorias/maxime-placeat
+          - listitem [ref=f1e249]:
+            - link "Quia Sint" [ref=f1e250] [cursor=pointer]:
+              - /url: http://localhost/categorias/quia-sint
+      - generic [ref=f1e251]:
+        - heading "Contacto" [level=6] [ref=f1e252]
+        - link "51951139928" [ref=f1e253] [cursor=pointer]:
+          - /url: https://wa.me/51951139928
+    - generic [ref=f1e256]: © 2026 Rapidocompras

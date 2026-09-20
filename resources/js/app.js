@@ -1,11 +1,13 @@
 import './bootstrap';
 
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import * as bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import './alertas';
+import './tema';
 
 import Alpine from 'alpinejs';
-import fotosDropzone from './fotos-dropzone';
 
-window.fotosDropzone = fotosDropzone;
+window.bootstrap = bootstrap;
 window.Alpine = Alpine;
 
 Alpine.start();

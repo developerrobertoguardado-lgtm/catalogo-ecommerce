@@ -1,0 +1,90 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: L
+        - img "Rapidocompras" [ref=e6]
+      - generic [ref=e7]:
+        - button "Cambiar a modo claro" [ref=e8] [cursor=pointer]:
+          - generic [ref=e11]: Cambiar tema
+        - button "D Demo" [ref=e13] [cursor=pointer]:
+          - generic [ref=e14]: D
+          - generic [ref=e15]: Demo
+  - generic [ref=e17]:
+    - list [ref=e19]:
+      - listitem [ref=e20]:
+        - link "Productos" [ref=e21] [cursor=pointer]:
+          - /url: http://localhost/admin/productos
+      - listitem [ref=e24]:
+        - link "Categorías" [ref=e25] [cursor=pointer]:
+          - /url: http://localhost/admin/categorias
+      - listitem [ref=e28]:
+        - link "Pedidos" [ref=e29] [cursor=pointer]:
+          - /url: http://localhost/admin/pedidos
+      - listitem [ref=e32]:
+        - link "Configuración" [ref=e33] [cursor=pointer]:
+          - /url: http://localhost/admin/configuracion
+    - main [ref=e36]:
+      - heading "Configuración" [level=1] [ref=e37]
+      - generic [ref=e39]:
+        - tablist [ref=e40]:
+          - tab "Tienda" [ref=e41] [cursor=pointer]
+          - tab "Aspecto visual" [active] [selected] [ref=e42] [cursor=pointer]
+        - generic [ref=e43]:
+          - tabpanel "Aspecto visual" [ref=e63]:
+            - paragraph [ref=e64]: Define los colores de tu empresa. Se aplican al catálogo público y al panel de administración. Si dejas un campo vacío se usa el color por defecto.
+            - generic [ref=e65]:
+              - generic [ref=e66]: Vista previa
+              - generic [ref=e67]:
+                - button "Botón" [ref=e68] [cursor=pointer]
+                - generic [ref=e69]: Acento
+                - generic [ref=e70]: Menú
+            - generic [ref=e71]:
+              - generic [ref=e72]: Color primario
+              - generic [ref=e73]:
+                - textbox [ref=e74] [cursor=pointer]: "#ad42c2"
+                - textbox "Color primario" [ref=e75]:
+                  - /placeholder: "#RRGGBB"
+                  - text: "#ad42c2"
+                - button "Por defecto" [ref=e76] [cursor=pointer]
+            - generic [ref=e77]:
+              - generic [ref=e78]: Color secundario
+              - generic [ref=e79]:
+                - textbox [ref=e80] [cursor=pointer]: "#05851a"
+                - textbox "Color secundario" [ref=e81]:
+                  - /placeholder: "#RRGGBB"
+                  - text: "#05851a"
+                - button "Por defecto" [ref=e82] [cursor=pointer]
+            - generic [ref=e83]:
+              - generic [ref=e84]: Color de botones
+              - generic [ref=e85]:
+                - textbox [ref=e86] [cursor=pointer]: "#69bd14"
+                - textbox "Color de botones" [ref=e87]:
+                  - /placeholder: "#RRGGBB"
+                  - text: "#69bd14"
+                - button "Por defecto" [ref=e88] [cursor=pointer]
+            - generic [ref=e89]:
+              - generic [ref=e90]: Color del menú
+              - generic [ref=e91]:
+                - textbox [ref=e92] [cursor=pointer]: "#0dc93c"
+                - textbox "Color del menú" [ref=e93]:
+                  - /placeholder: "#RRGGBB"
+                  - text: "#0dc93c"
+                - button "Por defecto" [ref=e94] [cursor=pointer]
+            - generic [ref=e95]:
+              - generic [ref=e96]: Color de fondo
+              - generic [ref=e97]:
+                - textbox [ref=e98] [cursor=pointer]: "#dedede"
+                - textbox "Color de fondo" [ref=e99]:
+                  - /placeholder: "#RRGGBB"
+                  - text: "#dedede"
+                - button "Por defecto" [ref=e100] [cursor=pointer]
+            - generic [ref=e101]:
+              - generic [ref=e102]: Color de texto
+              - generic [ref=e103]:
+                - textbox [ref=e104] [cursor=pointer]: "#000000"
+                - textbox "Color de texto" [ref=e105]:
+                  - /placeholder: "#RRGGBB"
+                  - text: "#000000"
+                - button "Por defecto" [ref=e106] [cursor=pointer]
+          - button "Guardar" [ref=e62] [cursor=pointer]

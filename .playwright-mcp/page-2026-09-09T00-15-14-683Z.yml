@@ -1,0 +1,110 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: http://localhost
+        - img "Rapidocompras" [ref=e6]
+      - textbox "Buscar por nombre" [ref=e12]:
+        - /placeholder: Buscar producto...
+  - main [ref=e13]:
+    - generic [ref=e14]:
+      - navigation "breadcrumb" [ref=e15]:
+        - list [ref=e16]:
+          - listitem [ref=e17]:
+            - link "Inicio" [ref=e18] [cursor=pointer]:
+              - /url: http://localhost
+          - listitem [ref=e19]: / Catálogo
+      - generic [ref=e20]:
+        - complementary [ref=e21]:
+          - generic [ref=e23]:
+            - generic [ref=e24]: Buscar por nombre
+            - textbox "Buscar producto..." [ref=e29]
+            - generic [ref=e30]:
+              - generic [ref=e31]:
+                - heading [level=2] [ref=e32]:
+                  - button "Categoría" [ref=e33] [cursor=pointer]
+                - generic [ref=e36]:
+                  - generic [ref=e37]:
+                    - radio "Todas" [ref=e38]
+                    - generic [ref=e39] [cursor=pointer]: Todas
+                  - generic [ref=e40]:
+                    - radio "Belleza" [checked] [ref=e41]
+                    - generic [ref=e42] [cursor=pointer]: Belleza
+                  - generic [ref=e44]:
+                    - radio "Electrodomesticos" [ref=e45]
+                    - generic [ref=e46] [cursor=pointer]: Electrodomesticos
+                  - generic [ref=e48]:
+                    - radio "Laptop y celulares" [ref=e49]
+                    - generic [ref=e50] [cursor=pointer]: Laptop y celulares
+                  - generic [ref=e52]:
+                    - radio "Mascotas" [ref=e53]
+                    - generic [ref=e54] [cursor=pointer]: Mascotas
+              - generic [ref=e56]:
+                - heading [level=2] [ref=e57]:
+                  - button "Precio" [ref=e58] [cursor=pointer]
+                - generic [ref=e66]:
+                  - spinbutton "Mín." [ref=e68]
+                  - spinbutton "Máx." [ref=e70]
+            - button "Filtrar" [ref=e71] [cursor=pointer]
+            - link "Eliminar filtros" [ref=e72] [cursor=pointer]:
+              - /url: http://localhost
+        - generic [ref=e74]:
+          - link [ref=e76] [cursor=pointer]:
+            - /url: http://localhost/productos/producto-de-prueba-modal-fmJSaa
+            - img "Producto de Prueba Modal" [ref=e78]
+            - generic [ref=e79]:
+              - paragraph [ref=e80]: Belleza
+              - heading "Producto de Prueba Modal" [level=3] [ref=e81]
+              - paragraph [ref=e82]: 19.99 PEN
+              - generic [ref=e83]: Agregar
+          - link [ref=e87] [cursor=pointer]:
+            - /url: http://localhost/productos/labore-ducimus-ea-70755
+            - img "Labore Ducimus Ea" [ref=e89]
+            - generic [ref=e90]:
+              - paragraph [ref=e91]: Belleza
+              - heading "Labore Ducimus Ea" [level=3] [ref=e92]
+              - paragraph [ref=e93]: 356.65 PEN
+              - generic [ref=e94]: Agregar
+          - link "Rem Rerum Aut Últimas unidades Belleza Rem Rerum Aut 364.26 PEN Agregar" [ref=e98] [cursor=pointer]:
+            - /url: http://localhost/productos/rem-rerum-aut-3209
+            - generic [ref=e99]:
+              - img "Rem Rerum Aut" [ref=e100]
+              - generic [ref=e101]: Últimas unidades
+            - generic [ref=e102]:
+              - paragraph [ref=e103]: Belleza
+              - heading "Rem Rerum Aut" [level=3] [ref=e104]
+              - paragraph [ref=e105]: 364.26 PEN
+              - generic [ref=e106]: Agregar
+          - link [ref=e110] [cursor=pointer]:
+            - /url: http://localhost/productos/rem-adipisci-reiciendis-41955
+            - img "Rem Adipisci Reiciendis" [ref=e112]
+            - generic [ref=e113]:
+              - paragraph [ref=e114]: Belleza
+              - heading "Rem Adipisci Reiciendis" [level=3] [ref=e115]
+              - paragraph [ref=e116]: 130.70 PEN
+              - generic [ref=e117]: Agregar
+  - contentinfo [ref=e120]:
+    - generic [ref=e122]:
+      - generic [ref=e123]:
+        - heading "Rapidocompras" [level=6] [ref=e124]
+        - paragraph [ref=e125]: Catálogo online con pedidos directos por WhatsApp.
+      - generic [ref=e126]:
+        - heading "Categorías" [level=6] [ref=e127]
+        - list [ref=e128]:
+          - listitem [ref=e129]:
+            - link "Belleza" [ref=e130] [cursor=pointer]:
+              - /url: http://localhost/categorias/belleza
+          - listitem [ref=e131]:
+            - link "Electrodomesticos" [ref=e132] [cursor=pointer]:
+              - /url: http://localhost/categorias/electrodomesticos
+          - listitem [ref=e133]:
+            - link "Laptop y celulares" [ref=e134] [cursor=pointer]:
+              - /url: http://localhost/categorias/laptop-y-celulares
+          - listitem [ref=e135]:
+            - link "Mascotas" [ref=e136] [cursor=pointer]:
+              - /url: http://localhost/categorias/mascotas
+      - generic [ref=e137]:
+        - heading "Contacto" [level=6] [ref=e138]
+        - link "51944523222" [ref=e139] [cursor=pointer]:
+          - /url: https://wa.me/51944523222
+    - generic [ref=e142]: © 2026 Rapidocompras

@@ -39,6 +39,15 @@
     </div>
 
     <div class="col-12">
+        <label for="long_description-{{ $prefix }}" class="form-label">Descripción larga <span class="text-muted fw-normal">(opcional, texto enriquecido)</span></label>
+        <div class="quill-wrapper">
+            <div id="quill-long-description-{{ $prefix }}" class="quill-editor"></div>
+            <textarea id="long_description-{{ $prefix }}" name="long_description" class="d-none">{{ old('long_description', $producto?->long_description) }}</textarea>
+        </div>
+        @error('long_description') <div class="text-danger small mt-1">{{ $message }}</div> @enderror
+    </div>
+
+    <div class="col-12">
         <label class="form-label">Fotos (máximo 4, arrastra para reordenar)</label>
         <x-fotos-dropzone :producto="$producto" />
         @error('fotos') <div class="text-danger small mt-1">{{ $message }}</div> @enderror

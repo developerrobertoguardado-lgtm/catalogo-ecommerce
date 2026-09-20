@@ -7,11 +7,13 @@
 export default function fotosDropzone(existentes, max) {
     return {
         items: [],
+        eliminados: [],
         dragOver: false,
         draggedIndex: null,
         max,
 
         init() {
+            this.eliminados = [];
             this.items = existentes.map((imagen) => ({
                 key: `existing-${imagen.id}`,
                 type: 'existing',
@@ -49,6 +51,13 @@ export default function fotosDropzone(existentes, max) {
         quitarNueva(index) {
             this.items.splice(index, 1);
             this.syncFileInput();
+        },
+
+        quitarExistente(index) {
+            const [item] = this.items.splice(index, 1);
+            if (item && item.type === 'existing') {
+                this.eliminados.push(item.id);
+            }
         },
 
         dragStart(index) {

@@ -1,0 +1,176 @@
+- generic [active] [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - generic [ref=f1e4]:
+        - generic [ref=f1e5]: L
+        - img "Rapidocompras" [ref=f1e6]
+      - generic [ref=f1e7]:
+        - button "Cambiar a modo oscuro" [ref=f1e8] [cursor=pointer]:
+          - generic [ref=f1e11]: Cambiar tema
+        - button "A Admin" [ref=f1e13] [cursor=pointer]:
+          - generic [ref=f1e14]: A
+          - generic [ref=f1e15]: Admin
+  - generic [ref=f1e17]:
+    - list [ref=f1e19]:
+      - listitem [ref=f1e20]:
+        - link "Productos" [ref=f1e21] [cursor=pointer]:
+          - /url: http://localhost/admin/productos
+      - listitem [ref=f1e24]:
+        - link "Categorías" [ref=f1e25] [cursor=pointer]:
+          - /url: http://localhost/admin/categorias
+      - listitem [ref=f1e28]:
+        - link "Pedidos" [ref=f1e29] [cursor=pointer]:
+          - /url: http://localhost/admin/pedidos
+      - listitem [ref=f1e32]:
+        - link "Configuración" [ref=f1e33] [cursor=pointer]:
+          - /url: http://localhost/admin/configuracion
+    - main [ref=f1e36]:
+      - heading "Productos" [level=1] [ref=f1e37]
+      - generic [ref=f1e38]:
+        - generic [ref=f1e41]:
+          - paragraph [ref=f1e42]: Total de productos
+          - paragraph [ref=f1e43]: "39"
+        - generic [ref=f1e46]:
+          - paragraph [ref=f1e47]: Sin stock
+          - paragraph [ref=f1e48]: "1"
+        - generic [ref=f1e51]:
+          - paragraph [ref=f1e52]: Stock bajo (< 5)
+          - paragraph [ref=f1e53]: "5"
+      - button "+ Nuevo producto" [ref=f1e55] [cursor=pointer]
+      - generic [ref=f1e58]:
+        - generic [ref=f1e59]:
+          - generic [ref=f1e60]: Buscar productos
+          - searchbox "Buscar productos" [ref=f1e61]
+        - button "Buscar" [ref=f1e63] [cursor=pointer]
+      - table [ref=f1e66]:
+        - rowgroup [ref=f1e67]:
+          - row [ref=f1e68]:
+            - columnheader "Foto" [ref=f1e69]
+            - columnheader "Nombre" [ref=f1e70]
+            - columnheader "Categoría" [ref=f1e71]
+            - columnheader "Precio" [ref=f1e72]
+            - columnheader "Stock" [ref=f1e73]
+            - columnheader [ref=f1e74]
+        - rowgroup [ref=f1e75]:
+          - row [ref=f1e76]:
+            - cell [ref=f1e77]:
+              - img "Aut Omnis Laborum" [ref=f1e78]
+            - cell "Aut Omnis Laborum" [ref=f1e79]
+            - cell "Molestiae Quasi" [ref=f1e80]
+            - cell "320.20" [ref=f1e81]
+            - cell "45 unidades" [ref=f1e82]
+            - cell [ref=f1e84]:
+              - button "Editar" [ref=f1e85] [cursor=pointer]
+              - button "Eliminar" [ref=f1e87] [cursor=pointer]
+          - row [ref=f1e88]:
+            - cell [ref=f1e89]:
+              - img "Blanditiis Rerum Et" [ref=f1e90]
+            - cell "Blanditiis Rerum Et" [ref=f1e91]
+            - cell "Tenetur In" [ref=f1e92]
+            - cell "12.32" [ref=f1e93]
+            - cell "13 unidades" [ref=f1e94]
+            - cell [ref=f1e96]:
+              - button "Editar" [ref=f1e97] [cursor=pointer]
+              - button "Eliminar" [ref=f1e99] [cursor=pointer]
+          - row [ref=f1e100]:
+            - cell [ref=f1e101]:
+              - img "Amet Ea Placeat" [ref=f1e102]
+            - cell "Amet Ea Placeat" [ref=f1e103]
+            - cell "Assumenda Libero" [ref=f1e104]
+            - cell "121.11" [ref=f1e105]
+            - cell "39 unidades" [ref=f1e106]
+            - cell [ref=f1e108]:
+              - button "Editar" [ref=f1e109] [cursor=pointer]
+              - button "Eliminar" [ref=f1e111] [cursor=pointer]
+          - row [ref=f1e112]:
+            - cell [ref=f1e113]:
+              - img "Ad Repellendus Omnis" [ref=f1e114]
+            - cell "Ad Repellendus Omnis" [ref=f1e115]
+            - cell "Assumenda Libero" [ref=f1e116]
+            - cell "455.01" [ref=f1e117]
+            - cell "27 unidades" [ref=f1e118]
+            - cell [ref=f1e120]:
+              - button "Editar" [ref=f1e121] [cursor=pointer]
+              - button "Eliminar" [ref=f1e123] [cursor=pointer]
+          - row [ref=f1e124]:
+            - cell [ref=f1e125]:
+              - img "Rerum Unde Delectus" [ref=f1e126]
+            - cell "Rerum Unde Delectus" [ref=f1e127]
+            - cell "Est Numquam" [ref=f1e128]
+            - cell "9.14" [ref=f1e129]
+            - cell "3 unidades" [ref=f1e130]
+            - cell [ref=f1e132]:
+              - button "Editar" [ref=f1e133] [cursor=pointer]
+              - button "Eliminar" [ref=f1e135] [cursor=pointer]
+          - row [ref=f1e136]:
+            - cell [ref=f1e137]:
+              - img "Voluptatem Voluptatem Et" [ref=f1e138]
+            - cell "Voluptatem Voluptatem Et" [ref=f1e139]
+            - cell "Tenetur In" [ref=f1e140]
+            - cell "257.01" [ref=f1e141]
+            - cell "8 unidades" [ref=f1e142]
+            - cell [ref=f1e144]:
+              - button "Editar" [ref=f1e145] [cursor=pointer]
+              - button "Eliminar" [ref=f1e147] [cursor=pointer]
+          - row [ref=f1e148]:
+            - cell [ref=f1e149]:
+              - img "Rerum Quas Dolor" [ref=f1e150]
+            - cell "Rerum Quas Dolor" [ref=f1e151]
+            - cell "Est Numquam" [ref=f1e152]
+            - cell "151.04" [ref=f1e153]
+            - cell "16 unidades" [ref=f1e154]
+            - cell [ref=f1e156]:
+              - button "Editar" [ref=f1e157] [cursor=pointer]
+              - button "Eliminar" [ref=f1e159] [cursor=pointer]
+          - row [ref=f1e160]:
+            - cell [ref=f1e161]:
+              - img "Rem Rerum Laudantium" [ref=f1e162]
+            - cell "Rem Rerum Laudantium" [ref=f1e163]
+            - cell "Tenetur In" [ref=f1e164]
+            - cell "276.45" [ref=f1e165]
+            - cell "33 unidades" [ref=f1e166]
+            - cell [ref=f1e168]:
+              - button "Editar" [ref=f1e169] [cursor=pointer]
+              - button "Eliminar" [ref=f1e171] [cursor=pointer]
+          - row [ref=f1e172]:
+            - cell [ref=f1e173]:
+              - img "Id Doloribus Sit" [ref=f1e174]
+            - cell "Id Doloribus Sit" [ref=f1e175]
+            - cell "Est Numquam" [ref=f1e176]
+            - cell "39.71" [ref=f1e177]
+            - cell "27 unidades" [ref=f1e178]
+            - cell [ref=f1e180]:
+              - button "Editar" [ref=f1e181] [cursor=pointer]
+              - button "Eliminar" [ref=f1e183] [cursor=pointer]
+          - row [ref=f1e184]:
+            - cell [ref=f1e185]:
+              - img "Ut Accusantium Dicta" [ref=f1e186]
+            - cell "Ut Accusantium Dicta" [ref=f1e187]
+            - cell "Molestiae Quasi" [ref=f1e188]
+            - cell "334.20" [ref=f1e189]
+            - cell "1 unidades" [ref=f1e190]
+            - cell [ref=f1e192]:
+              - button "Editar" [ref=f1e193] [cursor=pointer]
+              - button "Eliminar" [ref=f1e195] [cursor=pointer]
+      - navigation [ref=f1e197]:
+        - generic [ref=f1e198]:
+          - paragraph [ref=f1e200]: Showing 1 to 10 of 39 results
+          - list [ref=f1e202]:
+            - listitem "« Previous" [ref=f1e203]:
+              - generic [aria-hidden]: ‹
+            - listitem [ref=f1e204]:
+              - generic [ref=f1e205]: "1"
+            - listitem [ref=f1e206]:
+              - link "2" [ref=f1e207] [cursor=pointer]:
+                - /url: http://localhost/admin/productos?page=2
+            - listitem [ref=f1e208]:
+              - link "3" [ref=f1e209] [cursor=pointer]:
+                - /url: http://localhost/admin/productos?page=3
+            - listitem [ref=f1e210]:
+              - link "4" [ref=f1e211] [cursor=pointer]:
+                - /url: http://localhost/admin/productos?page=4
+            - listitem [ref=f1e212]:
+              - link "Next »" [ref=f1e213] [cursor=pointer]:
+                - /url: http://localhost/admin/productos?page=2
+                - text: ›
+      - text: "Normal Heading 1 Heading 2 Heading 3 Normal Descripción detallada del producto... Visit URL: EditRemove Normal Heading 1 Heading 2 Heading 3 Normal Descripción detallada del producto... Visit URL: EditRemove Normal Heading 1 Heading 2 Heading 3 Normal Descripción detallada del producto... Visit URL: EditRemove Normal Heading 1 Heading 2 Heading 3 Normal Descripción detallada del producto... Visit URL: EditRemove Normal Heading 1 Heading 2 Heading 3 Normal Descripción detallada del producto... Visit URL: EditRemove Normal Heading 1 Heading 2 Heading 3 Normal Descripción detallada del producto... Visit URL: EditRemove Normal Heading 1 Heading 2 Heading 3 Normal Descripción detallada del producto... Visit URL: EditRemove Normal Heading 1 Heading 2 Heading 3 Normal Descripción detallada del producto... Visit URL: EditRemove Normal Heading 1 Heading 2 Heading 3 Normal Descripción detallada del producto... Visit URL: EditRemove Normal Heading 1 Heading 2 Heading 3 Normal Descripción detallada del producto... Visit URL: EditRemove Normal Heading 1 Heading 2 Heading 3 Normal Descripción detallada del producto... Visit URL: EditRemove"

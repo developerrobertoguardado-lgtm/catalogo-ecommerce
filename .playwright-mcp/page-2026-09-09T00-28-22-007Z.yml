@@ -1,0 +1,18 @@
+- generic [ref=f1e4]:
+  - button "Cambiar a modo claro" [ref=f1e6] [cursor=pointer]:
+    - generic [ref=f1e9]: Cambiar tema
+  - generic [ref=f1e10]:
+    - generic [ref=f1e11]: L
+    - heading "Laravel" [level=1] [ref=f1e12]
+    - paragraph [ref=f1e13]: Panel administrativo
+  - generic [ref=f1e14]:
+    - generic [ref=f1e15]:
+      - generic [ref=f1e16]: Correo
+      - textbox "Correo" [active] [ref=f1e17]
+    - generic [ref=f1e18]:
+      - generic [ref=f1e19]: Contraseña
+      - textbox "Contraseña" [ref=f1e20]
+    - generic [ref=f1e21]:
+      - checkbox "Recordarme" [ref=f1e22]
+      - generic [ref=f1e23]: Recordarme
+    - button "Iniciar sesión" [ref=f1e24] [cursor=pointer]

@@ -1,0 +1,64 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: L
+        - text: Laravel
+      - button "D Demo" [ref=e7] [cursor=pointer]:
+        - generic [ref=e8]: D
+        - generic [ref=e9]: Demo
+  - generic [ref=e11]:
+    - list [ref=e13]:
+      - listitem [ref=e14]:
+        - link "Productos" [ref=e15] [cursor=pointer]:
+          - /url: http://localhost/admin/productos
+      - listitem [ref=e18]:
+        - link "Categorías" [ref=e19] [cursor=pointer]:
+          - /url: http://localhost/admin/categorias
+      - listitem [ref=e22]:
+        - link "Pedidos" [ref=e23] [cursor=pointer]:
+          - /url: http://localhost/admin/pedidos
+      - listitem [ref=e26]:
+        - link "Configuración" [ref=e27] [cursor=pointer]:
+          - /url: http://localhost/admin/configuracion
+    - main [ref=e30]:
+      - heading "Productos" [level=1] [ref=e31]
+      - generic [ref=e32]:
+        - generic [ref=e35]:
+          - paragraph [ref=e36]: Total de productos
+          - paragraph [ref=e37]: "1"
+        - generic [ref=e40]:
+          - paragraph [ref=e41]: Sin stock
+          - paragraph [ref=e42]: "0"
+        - generic [ref=e45]:
+          - paragraph [ref=e46]: Stock bajo (< 5)
+          - paragraph [ref=e47]: "3"
+      - button "+ Nuevo producto" [ref=e49] [cursor=pointer]
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - generic [ref=e54]: Buscar productos
+          - searchbox "Buscar productos" [ref=e55]: FotoRepro
+        - generic [ref=e56]:
+          - button "Buscar" [ref=e57] [cursor=pointer]
+          - link "Limpiar" [ref=e58] [cursor=pointer]:
+            - /url: http://localhost/admin/productos
+      - table [ref=e61]:
+        - rowgroup [ref=e62]:
+          - row [ref=e63]:
+            - columnheader "Foto" [ref=e64]
+            - columnheader "Nombre" [ref=e65]
+            - columnheader "Categoría" [ref=e66]
+            - columnheader "Precio" [ref=e67]
+            - columnheader "Stock" [ref=e68]
+            - columnheader [ref=e69]
+        - rowgroup [ref=e70]:
+          - row [ref=e71]:
+            - cell [ref=e72]:
+              - img "FotoRepro" [ref=e73]
+            - cell "FotoRepro" [ref=e74]
+            - cell "Dolorem Voluptatem" [ref=e75]
+            - cell "10.00" [ref=e76]
+            - cell "5 unidades" [ref=e77]
+            - cell [ref=e79]:
+              - button "Editar" [ref=e80] [cursor=pointer]
+              - button "Eliminar" [ref=e82] [cursor=pointer]

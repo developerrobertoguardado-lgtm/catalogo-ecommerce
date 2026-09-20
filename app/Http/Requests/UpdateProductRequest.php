@@ -18,10 +18,13 @@ class UpdateProductRequest extends FormRequest
             'category_id' => ['required', 'exists:categories,id'],
             'name' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
+            'long_description' => ['nullable', 'string'],
             'price' => ['required', 'numeric', 'min:0'],
             'stock' => ['required', 'integer', 'min:0'],
             'fotos' => ['nullable', 'array'],
             'fotos.*' => ['image', 'max:4096'],
+            'fotos_eliminar' => ['nullable', 'array'],
+            'fotos_eliminar.*' => ['integer'],
         ];
     }
 
@@ -29,10 +32,15 @@ class UpdateProductRequest extends FormRequest
     {
         $validator->after(function ($validator) {
             $producto = $this->route('producto');
+            $aEliminar = collect($this->input('fotos_eliminar', []))
+                ->map(fn ($id) => (int) $id)
+                ->filter()
+                ->unique();
             $existentes = $producto?->images()->count() ?? 0;
+            $quedan = max(0, $existentes - $aEliminar->count());
             $nuevas = count($this->file('fotos', []));
 
-            if ($existentes + $nuevas > ProductImage::MAX_IMAGES_PER_PRODUCT) {
+            if ($quedan + $nuevas > ProductImage::MAX_IMAGES_PER_PRODUCT) {
                 $validator->errors()->add('fotos', 'Un producto admite máximo 4 fotos.');
             }
         });

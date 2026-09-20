@@ -1,0 +1,16 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]: L
+    - heading "Laravel" [level=1] [ref=e7]
+    - paragraph [ref=e8]: Panel administrativo
+  - generic [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11]: Correo
+      - textbox "Correo" [active] [ref=e12]
+    - generic [ref=e13]:
+      - generic [ref=e14]: Contraseña
+      - textbox "Contraseña" [ref=e15]
+    - generic [ref=e16]:
+      - checkbox "Recordarme" [ref=e17]
+      - generic [ref=e18]: Recordarme
+    - button "Iniciar sesión" [ref=e19] [cursor=pointer]
